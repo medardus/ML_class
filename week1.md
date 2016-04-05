@@ -116,12 +116,17 @@
  - a := a +1 | a = a + 1 (X)
 
 * alpha: learning rate
+* conture plot (theta0, theta1)
+![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_intro.png)
 
 * theta0를 gradient decent로 추정
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_theta0.png)
 
 * theta1를 grdient decent로 추정
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_theta1.png)
+
+* hypothesis 함수에 따른 cost function 찾기
+![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_htheta.png)
 
 gradient decent 알고리즘
 * current: simultaneous update
