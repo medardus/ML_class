@@ -102,10 +102,20 @@
  - ᆮ예시는 bow shaped function이 구해짐.
 ![cost function 3d](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_intro.png)
 
+* 효과적인 알고리즘은 자동으로 theta0, theta1으로 cost funcition J를 최적값을 구해준다.
+
 ## gradient decent
 
 * gradient decent 목적
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_goal.png)
+
+* 반복하여 theta J를 찾음
+
+* ᆼAssignment , truth assertion
+ - a := b    | a = b
+ - a := a +1 | a = a + 1 (X)
+
+* alpha: learning rate
 
 * theta0를 gradient decent로 추정
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_theta0.png)
@@ -113,8 +123,16 @@
 * theta1를 grdient decent로 추정
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_theta1.png)
 
-* gradient decent 알고리즘
+gradient decent 알고리즘
+* current: simultaneous update
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_algorithm.png)
 
+* gradient descent 과정 중 J가 감소한다면 alpha를 작게한다.
 
+* local optimal
+ - convex function (bowl shaped): grobal optiomal, No local optimum
+
+* "batch" gradient decent
+  - each step of gradient descent uses all the training examples.
+  
 
