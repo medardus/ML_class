@@ -1,48 +1,103 @@
 # Machine Learing
 * week #1
+* 2016.04.05
 
 ## Welcome to Machine Learing!
 * Machine Learning 이란?
- - 구글에서 machine learning 이라 검색할 때, 이 결과를 알려주는 것
- - 페이스 북에서 친구 사인을 추천하는 것
- - 애플에서 iPhoto등으로 친구 얼굴을 인식해 주는 것.
- - 이메일에서 스팸이나 자동으로 분류해 주는 것
- - the science of getting computers to learn, without being explicitly programmed.
+  - 구글에서 machine learning 이라 검색할 때, 이 결과를 알려주는 것
+  - 페이스 북에서 친구 사인을 추천하는 것
+  - 애플에서 iPhoto등으로 친구 얼굴을 인식해 주는 것.
+  - 이메일에서 스팸이나 자동으로 분류해 주는 것
+  - the science of getting computers to learn, without being explicitly programmed.
 
 * 기계학습의 예시
- - 집을 청소하는 로봇
- - 로봇이 물건을 집고 올리고 다른 곳에 놓은 모든 행동
+  - 집을 청소하는 로봇
+  - 로봇이 물건을 집고 올리고 다른 곳에 놓은 모든 행동
 
 * ᆰᆼDatabase mining
-   - web cliccked data collected to use machine learing
-   - explicitly what is the so-called right answer.
-   - whether it's benign or malignant
+  - web cliccked data collected to use machine learing
+  - 사용자의 행동을 읽어서 사용자에게 더 좋은 서비스를 제공하기 위함.
+
+* Medical Records
+  - 전자로 기록된 의료 기록을 통해서 질병을 좀더 잘 이해할 수 있음.
+
+* Biology
+  - ᆰDNA분석등 많은 데이터를 수집
+  - gene sequence, DNA sequences ...
+  - Human Genome을 좀 더 잘 이해하기 위함.
+
+* Applications can't program by hand
+  - [autonomous helicopters](https://www.youtube.com/watch?v=_qah8oIzCwk)
+  - 손글씨 인식.
+  - 자연어 인식.
+  - 컴퓨터 비전.
+
+* Self-customized program
+  - 아마존, 넷플릭스에서 추천 시스템.
+
+* 인공지능 (Artificial Intelligence)
+  - 머신 러닝이 인공 지능으로 가는 길이라 믿는다.
+  - machine learning to do it by itself.
+  - Many Scientiest think the best way to make progress on this is through learning algorithms called neural networks which mimic now the homan brain works.
+
+* 이 과정에서 배울 것
+  - State of the art machine learning algorithms.
+
+
+## Supervised Learning
+* Housing price prediction
+
+* ᆭSupervised learning
+  - right answer given
+  - housing price
+     - what is right price?
+  - what is the actual price ?
+  - Breast cancer
+     - 5개의 악성/양성
+     - benign (양성): 칼슘 성분으로 된 미세한 석회질
+	 - malignant (악성):
+	 - maligant tumor (악성종양), carcinoma(암종), ᆫᆼsarcoma(육종)
+
+* Regression (superviced learing)
+  - predict continuous valued output
+
+* Classification (superviced learing)
+  - Discrete valued output (0, 1, ,,, )
+  - 유방암의 경우 사이즈 만으로 구분을 두어서 악성/양성을 평가하기 어렵다.
+  - 다양한 features로 되었다면 예측은 더 어려워진다. 오류또한 증가
+
+
+
+- explicitly what is the so-called right answer.
+  - whether it's benign or malignant
 
 * Unsupervised Learning
- - don't have any label
- - find some structure in the data!
- - seperated cluster (ex. 암 2개 분류: 악성 vs 양성)
- - 예시: 구글 뉴스
-   - 수많은 뉴스 중에서 자동으로 구분하여 묶어줌
- - unsuperviced learing or clustering 예시:
-   - Organize computer cluster
-   - Social network analysis
-   - Market segmentation
-   - Astronomical data analysis
+  - don't have any label
+  - find some structure in the data!
+  - seperated cluster (ex. 암 2개 분류: 악성 vs 양성)
+  - 예시: 구글 뉴스
+    - 수많은 뉴스 중에서 자동으로 구분하여 묶어줌
+  - unsuperviced learing or clustering 예시:
+    - Organize computer cluster
+	- Social network analysis
+	- Market segmentation
+	- Astronomical data analysis
 
 * ᆱCocktail Party 문제
- - 두사람이 있고, 동시에 말을 할 때. 마이크로 두개가 각각 다른 소리가 저장.
- - Octave 코드: [ᇀᇀW, s, v] = svd( (repmat(sum(x.*x,1), size(x,1),1).*x) *x');
- - ᆭᆶᆭSVD: singular Value Decomposition
- - 처음 배우는 사람들은 Octave로 알고리즘을 익힐 것을 추천, 이후 Java나 C++로 확장...
+  - 두사람이 있고, 동시에 말을 할 때. 마이크로 두개가 각각 다른 소리가 저장.
+  - Octave 코드: [ᇀᇀW, s, v] = svd( (repmat(sum(x.*x,1), size(x,1),1).*x) *x');
+  - ᆭᆶᆭSVD: singular Value Decomposition
+  - 처음 배우는 사람들은 Octave로 알고리즘을 익힐 것을 추천, 이후 Java나 C++로 확장...
 
 ## Model representation
+
 * 주택 가격 예측
  - 집의 크기에 따라 집의 가격이 결정
  - 예측 값또한 real-valued output이다. 
  - 따라서 Supervised Learing 이며, regression 임.
  - 크기가 1250feet^2 인 집의 예상 가격을 구해보자.
  - 직선으로 함수를 구했다면 1250: 220k 가 예상 주택 가격이다. 
+
 ![Housing Prices](https://github.com/hephaex/ML_class/blob/master/week1/week1_model%20representation_hosing%20price.png)
 
 * Training set of housing prices
@@ -68,6 +123,7 @@
 ![reprent h](https://github.com/hephaex/ML_class/blob/master/week1/week1_model%20representation_represent%20h.png)
 
 ## Cost Function
+
 * Parameters of model: theta 0, theta 1, ,,,
 ![cost funtion](https://github.com/hephaex/ML_class/blob/master/week1/week1_cost%20funtion_training%20set%20and%20hypothesis.png)
 * choose theta0 and theta1
@@ -126,14 +182,17 @@
 
 
 * ᆼAssignment 와 truth assertion 비교
- - a := b    | a = b
- - a := a +1 | a = a + 1 (X)
+ - ᆼAssignment
+  - a := b
+  - a := a +1
+ - truth assertion
+  - a = b
+  - a = a + 1 (X)
 
 * 경사하강법 (gradient decent) 알고리즘
  - 비용함수 (cost function)을 최소화
  - 모든 theta0, theta1에 대하여도 비용함수 J를 구할 수 있지만,
  - 조금씩 theta 값들을 바꿔가면서 지역 최저점 (local minimum)을 구한다.
-
 
 * theta0를 gradient decent로 추정
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_theta0.png)
