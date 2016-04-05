@@ -81,7 +81,7 @@
 	- 다변이나 비선형이라면 다른 오류 함수를 선택
 ![cost funtion choose theta0 theta1](https://github.com/hephaex/ML_class/blob/master/week1/week1_cost%20funtion_choose%20theta0%20theta1.png)
 
-## Cost Function - intuition I
+## Cost Function 
 
 * Hypothesis function: htheta(x) is funciton of X
 * Cost function: J(theta1) is function of theta1
@@ -116,7 +116,10 @@
  - a := a +1 | a = a + 1 (X)
 
 * alpha: learning rate
-* conture plot (theta0, theta1)
+* 등고선 선도 (conture plot) J(theta0, theta1)
+  - 입력: 변수가 2개 (theta0, theta1)
+  - 출력: 비용함수 (cost function) J(theta0, theta1)
+
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_intro.png)
 
 * theta0를 gradient decent로 추정
@@ -125,19 +128,35 @@
 * theta1를 grdient decent로 추정
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_theta1.png)
 
+여기서 theta0일때와 theta1일 때 각각 비용함수 최소값이 달라 질수 있다는 점에 유의하자.
+
 * hypothesis 함수에 따른 cost function 찾기
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_htheta.png)
 
-gradient decent 알고리즘
+
+* 경사하강법 (gradient decent) 알고리즘
+ - 비용함수 (cost function)을 최소화
+ - 모든 theta0, theta1에 대하여도 비용함수 J를 구할 수 있지만,
+ - 조금씩 theta 값들을 바꿔가면서 지역 최저점 (local minimum)을 구한다.
+ 
 * current: simultaneous update
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_algorithm.png)
 
-* gradient descent 과정 중 J가 감소한다면 alpha를 작게한다.
-
-* local optimal
- - convex function (bowl shaped): grobal optiomal, No local optimum
+ 
+* 등고선 함수 (convex function, bowl shaped)의 지역 최소값, 전역 최적값
+ - 지역 최소값 (local optimal minimum)
+ - 전역 최적 값을 가진다. grobal optiomal
+ - 지역 최적 값은 가지지 않는다. No local optimum
 
 * "batch" gradient decent
   - each step of gradient descent uses all the training examples.
+
+* theta(J)가 최소가 될때 까지 반복한다.
+ - 이 과정 (gradient descent) 중 J가 감소한다면 alpha를 작게한다.
+
+* ᆼalpha(learning rate)
+ - 크면 더 빨리 수렴하지만 정확도는 떨어진다.
+ - 작으면 늦게 수렴하지만 정확도는 올라간다. 
+ - 이것을 이용해서 비용함수 theta(J)가 감소한다면 alpha를 작게한다.
   
 
