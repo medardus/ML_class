@@ -88,39 +88,56 @@
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_cost%20function_summary.png)
 
 * hypothesis function과 Cost Function의 관계
-  - case: theta1: 1 일 때 Cost Function의 0
-  - case: theta1: 0.5 일 때 Cost Function은 0.5
-  - case: theta1: 1.5 일 때 Cost Function은 0.5
-  - case: theta1: ... 일 때 Cost Function을 구할 수 있다. 
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_cost%20functinn%20intunition_intro.png)
+
+* case: theta1: 1 일 때 Cost Function의 0
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_cost%20functinn%20intunition_htheta(x)%20Cost(theta1).png)
+
+* case: theta1: 0.5 일 때 Cost Function은 0.5
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_cost%20functinn%20intunition_htheta(x)%20Cost(theta1)_%232.png)
+
+* case: theta1: 1.5 일 때 Cost Function은 0.5
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_cost%20functinn%20intunition_htheta(x)%20Cost(theta1)_%233.png)
 
-* Conture plot: theta0, theta1에 2개를 가지고 Cost function을 3차원으로 그림
+* case: theta1: ... 일 때 Cost Function을 구할 수 있다. 
+
+## 등고선 선도 (conture plot)
+* 등고선 선도(Conture plot) theta 값을 가지고 비용함수 ᆱ(cost function)을 3차원으로 그린 그림.
+ - 예시는 theta0, theta1에 2개를 가지고 Cost function을 3차원으로 그림
  - theta0, theta1, cost function(theta0, theta1)
- - ᆮ예시는 bow shaped function이 구해짐.
+ - bow shaped function이 구해짐.
+
 ![cost function 3d](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_intro.png)
 
 * 효과적인 알고리즘은 자동으로 theta0, theta1으로 cost funcition J를 최적값을 구해준다.
 
-## gradient decent
+## 경사하강법 (gradient decent)
 
-* gradient decent 목적
+* 경사하강법 (gradient decent) 목적
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_goal.png)
 
-* 반복하여 theta J를 찾음
+* 반복하여 최적의 비용함수 theta (J)를 찾음
 
-* ᆼAssignment , truth assertion
- - a := b    | a = b
- - a := a +1 | a = a + 1 (X)
-
-* alpha: learning rate
 * 등고선 선도 (conture plot) J(theta0, theta1)
   - 입력: 변수가 2개 (theta0, theta1)
   - 출력: 비용함수 (cost function) J(theta0, theta1)
 
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_intro.png)
+
+
+* ᆼAssignment 와 truth assertion 비교
+ - a := b    | a = b
+ - a := a +1 | a = a + 1 (X)
+
+* 경사하강법 (gradient decent) 알고리즘
+ - 비용함수 (cost function)을 최소화
+ - 모든 theta0, theta1에 대하여도 비용함수 J를 구할 수 있지만,
+ - 조금씩 theta 값들을 바꿔가면서 지역 최저점 (local minimum)을 구한다.
+
+* "batch" gradient decent
+ - theta(J)가 최소가 될때 까지 반복한다.
+ - each step of gradient descent uses all the training examples.
+ - 이 과정 (gradient descent) 중 J가 감소한다면 alpha를 작게한다.
 
 * theta0를 gradient decent로 추정
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_theta0.png)
@@ -130,33 +147,19 @@
 
 여기서 theta0일때와 theta1일 때 각각 비용함수 최소값이 달라 질수 있다는 점에 유의하자.
 
-* hypothesis 함수에 따른 cost function 찾기
-![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_htheta.png)
-
-
-* 경사하강법 (gradient decent) 알고리즘
- - 비용함수 (cost function)을 최소화
- - 모든 theta0, theta1에 대하여도 비용함수 J를 구할 수 있지만,
- - 조금씩 theta 값들을 바꿔가면서 지역 최저점 (local minimum)을 구한다.
- 
-* current: simultaneous update
-![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_algorithm.png)
-
- 
-* 등고선 함수 (convex function, bowl shaped)의 지역 최소값, 전역 최적값
- - 지역 최소값 (local optimal minimum)
- - 전역 최적 값을 가진다. grobal optiomal
- - 지역 최적 값은 가지지 않는다. No local optimum
-
-* "batch" gradient decent
-  - each step of gradient descent uses all the training examples.
-
-* theta(J)가 최소가 될때 까지 반복한다.
- - 이 과정 (gradient descent) 중 J가 감소한다면 alpha를 작게한다.
-
 * ᆼalpha(learning rate)
  - 크면 더 빨리 수렴하지만 정확도는 떨어진다.
  - 작으면 늦게 수렴하지만 정확도는 올라간다. 
  - 이것을 이용해서 비용함수 theta(J)가 감소한다면 alpha를 작게한다.
-  
+
+* hypothesis 함수에 따른 cost function 찾기
+![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_htheta.png)
+ 
+* current: simultaneous update
+![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_algorithm.png)
+
+* 등고선 함수 (convex function, bowl shaped)의 지역 최소값, 전역 최적값
+ - 지역 최소값 (local optimal minimum)
+ - 전역 최적 값을 가진다. grobal optiomal
+ - 지역 최적 값은 가지지 않는다. No local optimum
 
