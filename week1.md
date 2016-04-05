@@ -80,3 +80,41 @@
     - 선형 가설 모델(Lineare hypothesis regression)에서는 Square error function을 주로 사용
 	- 다변이나 비선형이라면 다른 오류 함수를 선택
 ![cost funtion choose theta0 theta1](https://github.com/hephaex/ML_class/blob/master/week1/week1_cost%20funtion_choose%20theta0%20theta1.png)
+
+## Cost Function - intuition I
+
+* Hypothesis function: htheta(x) is funciton of X
+* Cost function: J(theta1) is function of theta1
+![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_cost%20function_summary.png)
+
+* hypothesis function과 Cost Function의 관계
+  - case: theta1: 1 일 때 Cost Function의 0
+  - case: theta1: 0.5 일 때 Cost Function은 0.5
+  - case: theta1: 1.5 일 때 Cost Function은 0.5
+  - case: theta1: ... 일 때 Cost Function을 구할 수 있다. 
+![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_cost%20functinn%20intunition_intro.png)
+![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_cost%20functinn%20intunition_htheta(x)%20Cost(theta1).png)
+![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_cost%20functinn%20intunition_htheta(x)%20Cost(theta1)_%232.png)
+![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_cost%20functinn%20intunition_htheta(x)%20Cost(theta1)_%233.png)
+
+* Conture plot: theta0, theta1에 2개를 가지고 Cost function을 3차원으로 그림
+ - theta0, theta1, cost function(theta0, theta1)
+ - ᆮ예시는 bow shaped function이 구해짐.
+![cost function 3d](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_intro.png)
+
+## gradient decent
+
+* gradient decent 목적
+![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_goal.png)
+
+* theta0를 gradient decent로 추정
+![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_theta0.png)
+
+* theta1를 grdient decent로 추정
+![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_theta1.png)
+
+* gradient decent 알고리즘
+![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_algorithm.png)
+
+
+
