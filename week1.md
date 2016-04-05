@@ -37,7 +37,32 @@
  - 처음 배우는 사람들은 Octave로 알고리즘을 익힐 것을 추천, 이후 Java나 C++로 확장...
 
 ## Model representation
-
+* 주택 가격 예측
+ - 집의 크기에 따라 집의 가격이 결정
+ - 예측 값또한 real-valued output이다. 
+ - 따라서 Supervised Learing 이며, regression 임.
+ - 크기가 1250feet^2 인 집의 예상 가격을 구해보자.
+ - 직선으로 함수를 구했다면 1250: 220k 가 예상 주택 가격이다. 
 ![Housing Prices](https://github.com/hephaex/ML_class/blob/master/week1/week1_model%20representation_hosing%20price.png)
+
+* Training set of housing prices
+ - m: Number of traing example (학습 수, m=47)
+ - X's: "input" variable / feature
+   - X(1): 2104
+   - X(2): 1416
+ - Y's: "output" variable / target variable
+   - Y(1): 460
+   - Y(2): 232
 ![training sets](https://github.com/hephaex/ML_class/blob/master/week1/week1_model%20representation_traing%20set.png)
+
+* Model Representaion 과정
+  - Training set
+  - Learning Algorithm
+  - H: Hypothesis 학습 알고리즘에 따른 모델 정립
+  - 1변수 추정이라면 Htheta(X) = theta0 + theta1(X)
+  - 다변수 추정이라면 더 복잡한 theta항이 나타난다. 
+  - ex)
+     - input X's: size of house
+	 - hypothesis htheta(X): model representation
+	 - output Y's: 예상 값 Estimated price 
 ![reprent h](https://github.com/hephaex/ML_class/blob/master/week1/week1_model%20representation_represent%20h.png)
