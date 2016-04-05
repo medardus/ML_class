@@ -66,3 +66,17 @@
 	 - hypothesis htheta(X): model representation
 	 - output Y's: 예상 값 Estimated price 
 ![reprent h](https://github.com/hephaex/ML_class/blob/master/week1/week1_model%20representation_represent%20h.png)
+
+## Cost Function
+* Parameters of model: theta 0, theta 1, ,,,
+![cost funtion](https://github.com/hephaex/ML_class/blob/master/week1/week1_cost%20funtion_training%20set%20and%20hypothesis.png)
+* choose theta0 and theta1
+![cost funtion hypothesis](https://github.com/hephaex/ML_class/blob/master/week1/week1_cost%20funtion_hypothesis.png)
+* Hthets(X) 을 Y에 가깝게 만들어 주어야만 한다.
+  - overal objective function for linear regression
+  - ToDo: minimize theta0, theta1
+  - Cost Function J(theta0, thera1): Square error function
+  - Error funtion: ᆱCost Function과 실제 값과의 차이
+    - 선형 가설 모델(Lineare hypothesis regression)에서는 Square error function을 주로 사용
+	- 다변이나 비선형이라면 다른 오류 함수를 선택
+![cost funtion choose theta0 theta1](https://github.com/hephaex/ML_class/blob/master/week1/week1_cost%20funtion_choose%20theta0%20theta1.png)
