@@ -134,10 +134,6 @@
  - 모든 theta0, theta1에 대하여도 비용함수 J를 구할 수 있지만,
  - 조금씩 theta 값들을 바꿔가면서 지역 최저점 (local minimum)을 구한다.
 
-* "batch" gradient decent
- - theta(J)가 최소가 될때 까지 반복한다.
- - each step of gradient descent uses all the training examples.
- - 이 과정 (gradient descent) 중 J가 감소한다면 alpha를 작게한다.
 
 * theta0를 gradient decent로 추정
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_theta0.png)
@@ -157,6 +153,11 @@
  
 * current: simultaneous update
 ![hypothesis cost](https://github.com/hephaex/ML_class/blob/master/week1/week1_gradient%20decent_algorithm.png)
+
+* "batch" 경사하강법 (gradient decent) 
+ - theta(J)가 최소가 될때 까지 반복한다.
+ - each step of gradient descent uses all the training examples.
+ - 이 과정 (gradient descent) 중 J가 감소한다면 alpha를 작게한다.
 
 * 등고선 함수 (convex function, bowl shaped)의 지역 최소값, 전역 최적값
  - 지역 최소값 (local optimal minimum)
