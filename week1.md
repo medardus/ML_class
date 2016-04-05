@@ -35,3 +35,7 @@
  - Octave 코드: [ᇀᇀW, s, v] = svd( (repmat(sum(x.*x,1), size(x,1),1).*x) *x');
  - ᆭᆶᆭSVD: singular Value Decomposition
  - 처음 배우는 사람들은 Octave로 알고리즘을 익힐 것을 추천, 이후 Java나 C++로 확장...
+
+## Model representation
+
+![Housing Prices](https://github.com/hephaex/ML_class/blob/master/week1_model%20representation_hosing%20price.png)
