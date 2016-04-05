@@ -38,6 +38,6 @@
 
 ## Model representation
 
-![Housing Prices](https://github.com/hephaex/ML_class/blob/master/week1_model%20representation_hosing%20price.png)
-![training sets](https://github.com/hephaex/ML_class/blob/master/week1_model%20representation_traing%20set.png)
-![reprent h](https://github.com/hephaex/ML_class/blob/master/week1_model%20representation_represent%20h.png)
+![Housing Prices](https://github.com/hephaex/ML_class/blob/master/week1/week1_model%20representation_hosing%20price.png)
+![training sets](https://github.com/hephaex/ML_class/blob/master/week1/week1_model%20representation_traing%20set.png)
+![reprent h](https://github.com/hephaex/ML_class/blob/master/week1/week1_model%20representation_represent%20h.png)
