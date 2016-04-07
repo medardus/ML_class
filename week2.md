@@ -72,7 +72,7 @@ Htheta(x) = theta' X = theta0 * x0 + theta1 * x1 + theta2 * x2 + ... thetaN * xN
  - J(theta0, theta1, theta2, ,,, , thetaN) = 1 / (2 * M)  *  sum(i=1, M){htheta( X(i)) - Y(I)) ^2
 
 * 경사하강법 (gradient descent) 으로 추정하면
-
+Gradient Descent도 theta0, theta1에서 단지 θ값이 많아졌지만 알고리즘이 바뀌지 않았고, 구해야 할 θ값이 더 많이 반복되어 구해야 한다. 
 ```
 반복항 {
          theta(J) := theta(J) - alpha * partitial derivative(theta J) * J(theta0, theta1, ,,, , thetaN)
