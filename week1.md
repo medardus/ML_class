@@ -1,6 +1,5 @@
 # Machine Learing
 * week #1
-* 2016.04.05
 
 ## Welcome to Machine Learing!
 * Machine Learning 이란?
