@@ -51,4 +51,51 @@
 
 이것을 multivariate linear regression 이라고 한다. 
 
+## Gradient Descent for Multiple Valiables 다변수에서 경사하강법
+
+어떻게 가설에 사용한 매개변수(parameters)를 맞출것인가?
+여기서는 경사하강법을 이용해 보자.
+
+다변수 선형 회귀 (multivariable linear regression)에서 x0 = 1 이라고 하면.
+
+* 가설 Hypothesis는
+
+```
+Htheta(x) = theta' X = theta0 * x0 + theta1 * x1 + theta2 * x2 + ... thetaN * xN
+```
+![GD4MV_01](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescent4MutipleFeature_02.png)
+
+* 매개변수 Parameters는 N개의 다변수가 있다면 다음처럼 정리할 수 있다.
+ - theta0, theta1, theta2, ... ,thetaN
+* 비용함수 Cost Function은 N개의 다변수이다.
+ - ᆭSquare error 방식으로 구하면
+ - J(theta0, theta1, theta2, ,,, , thetaN) = 1 / (2 * M)  *  sum(i=1, M){htheta( X(i)) - Y(I)) ^2
+
+* 경사하강법 (gradient descent) 으로 추정하면
+
+```
+반복항 {
+         theta(J) := theta(J) - alpha * partitial derivative(theta J) * J(theta0, theta1, ,,, , thetaN)
+}
+```
+
+* n=1 이일 때 경사하강법을 적용해서 theta0 와 theta1 에 반복하서 구할수 있다. 
+![GD4MV_0ᆸᆸ3](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescent4MutipleFeature_03.png)
+
+* 새로운 알고리즘으로 n >= 1 일때로 해서 바꾸어 보면
+ - 편미분을 통한 비용함수를 다른 표현으로 바뀌었다.
+![GD4MV_04](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescent4MutipleFeature_04.png)
+ - 이전 알고리즘에서 n=1 일때 theta0 를 정리하면 
+![GD4MV_05](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescent4MutipleFeature_05.png)
+ - 새로운 알고리즘에서 theta0 는
+![GD4MV_06](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescent4MutipleFeature_06.png)
+ - 이전 알고리즘에서 n=1 일때 theta1 를 정리하면 
+![GD4MV_07](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescent4MutipleFeature_07.png)
+ - 새로운 알고리즘에서 theta1 는
+![GD4MV_08](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescent4MutipleFeature_08.png)
+ - 새로운 알고리즘에서 theta2 는
+![GD4MV_09](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescent4MutipleFeature_09.png)
+
+새로운 알고리즘은 N을 수에 따라 thetaN을 구할 수 있다.
+
 
