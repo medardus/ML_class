@@ -98,4 +98,36 @@ Gradient Descent도 theta0, theta1에서 단지 θ값이 많아졌지만 알고�
 
 새로운 알고리즘은 N을 수에 따라 thetaN을 구할 수 있다.
 
+## Gradient Descent in Practice I: Feature Scaling
+* feature scaling
+ - 다변수에서 각 변수에 대하여 스케일이 다를 때 이를 조정하는 것.
+ 
+ex) x1과 x2가 있을 때 x1은 2000의 범위, x2는 5의 범위라면. 
+ - x1: 면적 size(0~2000)의 범위,
+   - 면적의 대역 폭 (2000)으로 나누어 준다.
+   - ᆫsize(feet^2) / 2000
+   - 0 =< x1 =< 1
+ - x2: 침실 수 
+   - 침실 수 (number of bedrooms)는 (1~5)의 범위
+   - 침실 수의 변수 폭 (5)으로 나누어 준다.
+   - 0 =< x2 =< 1
+   
+![GDPI_01](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescentPracticeI_01.png)
 
+* feature scaling에서 음수 값의 폭을 가진다면.
+  - -1 =< x(i) =< 1 로 표현할 수 있다.
+  - x0 = 1이라면 x1은 -ᆸ3~3, -0.3 ~ 0.3 정도는 괜찮다.
+
+![GDPI_02](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescentPracticeI_02.png)
+
+* Mean Normalization
+  - ᆨxi를 xi - ui 로 바꾸면, 평균 값이 0에 가깝게 된다.
+  - ᆨx1 <= (x1 - u1) / s1
+    - u1: avg value of x1 in taining set
+	- s1: range : (max - min)
+  - x2 <= (x2 - u2) / s2
+    - u2: avg value of x2 in taining set
+	- s2: range : (max - min)
+    
+![GDPI_03](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescentPracticeI_03.png)
+  
