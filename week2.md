@@ -139,10 +139,52 @@ ex) x1과 x2가 있을 때 x1은 2000의 범위, x2는 5의 범위라면.
 ![GDPI_03](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescentPracticeI_03.png)
   
 ## Gradient Descent in Practice II: Learning rate
-
+* 경사 하강법을 사용했을 때 이것이 올바르게 동작하는 검증에 대하여
+* Learning Rete Alpha 값을 선택에 대하여.
 ![GDPII_01](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescentPracticeII_01.png)
+
+* 경사하강법 (Gradient Descent)의 목표
+ - 비용함수 J(theta)를 최소화 하는 값을 찾는 것이다. 
+ - 경사 하강법을 반복(Interations)하면 할 수록 J(theta)는 줄어든다.
+ - x는 theta가 아니다.
+ - x: No. of iterations 반복 수이다.
+ - 여기 예시에서는 100 반복에서 200반복일 때 J(theata)의 변화량과
+ - 300에서 400 반복에서 J(theata)의 변화량이 다름을 알 수 있다.
+ - 계속 반복하면 비용함수 J(theta)가 최소가 되는 값을 찾을 수 있다.
+ - 하지만
+ - 30번 반복해서 비용함수 J(theta)를 찾는 것과
+ - 3000번 반복해서 비용함수 J(theta)를 찾는 것과
+ - 3백만번 반복해서 비용함수 J(theta)를 찾는 것은 다르다.
+ - 매번 이것을 고려하지 않기 위해서 자동 수렴 검증 (Automatic convergence test)을 사용하기도 한다.
+ - 한번 반복에 10^-3보다 비용함수 J(theta)가 줄어든다면 수렴위치로 해서 멈춘다.
 ![GDPII_02](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescentPracticeII_02.png)
+
+* 겸사하강법이 올바르게 동작하는 지 검증해보자. 
+ - 반복할 수록 J(theta)가 커진다면
+   - 경사하강 법은 올바르게 동작하지 않는 것이다.
+   - Alpha(Learning Rate) 값이 크기 때문에 수렴하지 않는 것이다. 
+   - 이때 ᆮAlpha(Learning Rate) 를 작게한다.
+ - 반복할수록 J(theat)값이 크거나 작거나 한다면.
+   - 이때도 ᆮAlpha(Learning Rate) 를 작게한다.
+ - 작은 ᆮAlpha(Learning Rate)라면 매 반복마다 J(theta)는 감소할 것이다.
+   - 하지만 너무 작은 Alpha(Learning Rate)라면 많이 반복해야 원하는 J(theta)를 찾을 수 있다.
 ![GDPII_03](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescentPracticeII_03.png)
+
+* 예시
+ - In Graph C: The cost function is increasing, the learning rate is set too high.
+ - Both Graph A and B: converge to an optimum of the cost function
+   - Graph B: so very slowly, so its learning rate is set too low.
+   - Graph A: good choosen alpha
+![GDPII_05](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescentPracticeII_05.png)
+
+* 요약
+ - Alpha (Learning Rate): 작다면 천천히 수렴한다.
+ - ᆮAlpha (Learning Rate): 너무 크다면
+   - J(theta)는 매 반복마다 줄어들지 않는다.
+   - 수렴하지 않을 수도 있다.
+ - ᆮAlpha를 작은 값에서 (예시 0.001 -> 0.01 -> 0.1) 큰값으로 바꿔가면서
+   - J(theta)가 크게 바뀌기 때문에 Alpha 를 반복시 적절히 바꾸어 가는 것이 좋다. 
+
 ![GDPII_04](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescentPracticeII_04.png)
 
 ## Features and Polynomial Regression
