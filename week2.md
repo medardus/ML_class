@@ -3,6 +3,13 @@
 * 
 * date: 2016.04.12
 
+# Multivariate Linear Regression
+* Multiple features
+* Gradient Descent for Multiple Variables
+* Gradient Descent in Practice I - feature scaling
+* Gradient Descent in Practice II - Learning Rate
+* Features and Polynomial Regression
+
 ## Multiple features
 * simple features: House size and price
  - x: size(feet^2)
@@ -131,3 +138,33 @@ ex) x1과 x2가 있을 때 x1은 2000의 범위, x2는 5의 범위라면.
     
 ![GDPI_03](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescentPracticeI_03.png)
   
+## Gradient Descent in Practice II: Learning rate
+
+![GDPII_01](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescentPracticeII_01.png)
+![GDPII_02](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescentPracticeII_02.png)
+![GDPII_03](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescentPracticeII_03.png)
+![GDPII_04](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescentPracticeII_04.png)
+
+## Features and Polynomial Regression
+
+![FPR_01](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_FeaturesPolinomialRegression_01.png)
+![FPR_02](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_FeaturesPolinomialRegression_02.png)
+![FPR_03](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_FeaturesPolinomialRegression_03.png)
+
+# Computing Parameters Analyticaaly
+* Normal Equation
+* Normal Equation Noninvertibility
+
+## Normal Equation
+
+![CPA_NE_01](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_NormalEquation_01.png)
+![CPA_NE_02](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_NormalEquation_02.png)
+![CPA_NE_03](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_NormalEquation_03.png)
+![CPA_NE_04](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_NormalEquation_04.png)
+![CPA_NE_05](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_NormalEquation_05.png)
+![CPA_NE_06](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_NormalEquation_06.png)
+
+## Normal Equation Noninvertibility
+
+![CPA_NEN_01](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_NormalEquationNonInvertiability_01.png)
+![CPA_NEN_02](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_NormalEquationNonInvertiability_02.png)
