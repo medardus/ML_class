@@ -188,10 +188,44 @@ ex) x1과 x2가 있을 때 x1은 2000의 범위, x2는 5의 범위라면.
 ![GDPII_04](https://github.com/hephaex/ML_class/blob/master/week2/week2_GradientDescentPracticeII_04.png)
 
 ## Features and Polynomial Regression
-
+* 학습 알고리즘이 때로는 매우 강력해서 대상에 잘 맞을 수도 있다.
+* 학습 알고리즘이 선형성이 아닌 비 선형성일 수 있다.
+ - 비선형 학습 함수는 선형에 비해서 복잡하다.
+ 
 ![FPR_01](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_FeaturesPolinomialRegression_01.png)
+
+* 집값 예측
+ - 집값의 가설함수는 앞마당 길이와 폭으로 나타낸다면. 
+ - htheta(x) = theta0 + theta1 * frontage + theta2 * depth
+   - frontage: x1
+   - depth: x2
+ - 여기서 면적(Area)는
+   - X = frontage * depth 로 나타낼수 있다.
+   - 이것으로 가설 함수를 다시 세우면.
+   - htheta(x) = theta0 + theta1 * X 가 된다.
+   - 여기서 X는 면적(Area) 이다.
+ - 따라서 집값 문제도 어떻게 변수를 정하는 지에 따라서 가설 함수는 달라진다.
+
+* Polynomial regression
+ - 집값 (price): y
+ - 면적 (size): x
+ - 이것을 가지고 여기서는 두가지 모델로 세워보면.
+   - ᇂ1) 2차함수: theta0 + theta1 * x + theta2 * x^2
+   - ᆻ2) 3차함수: theta0 + theta1 * x + theta2 * x^2 + theta3 * x^3
+ - 2차 함수는 크기가 증가함에 따라 감소할수도 있다.
+ - 3차 함수는 크기가 증가하여도 감소하지 않는다.
+ - 따라서 기계학습에서는 3차 함수를 사용하는 것이 좋다.
 ![FPR_02](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_FeaturesPolinomialRegression_02.png)
+
+* ᆱ특징 선택 (choice of feature)
+ - 2차 가설함수: htheta(x) = theta0 + theta1 * (size x) + theta2 * (size x)^2
+   - 증가항도 있지만, 감소하는 부분도 있기 때문에 가설함수로 적합하지 않다. 
+ - SQRT를 사용해서 변형한 가설함수: htheta(x) = theta0 + theta1 * (size x) + theta2 * SQRT(size x)
+   - 계속 증가하므로 가설함수로 보다 적합하다.  
 ![FPR_03](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_FeaturesPolinomialRegression_03.png)
+
+* quiz
+![FPR_04](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_FeaturesPolinomialRegression_04.png)
 
 # Computing Parameters Analyticaaly
 * Normal Equation
