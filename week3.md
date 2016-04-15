@@ -1,7 +1,7 @@
 # Machine Learing
 * progress: week #3
 * 
-* date: 2016.04.12
+* date: 2016.04.??
 
 ## Classification and Representation
 * Classification
@@ -22,8 +22,6 @@
 * Regularized Linear Regression
 * Regularized Logistic Regression
 
-![CPA_NEN_02](https://github.com/hephaex/ML_class/blob/master/week2/week2_LinearRegressionMultipleVariables_NormalEquationNonInvertiability_02.png)
-
 ## Classification and Representation
 
 ### Classification
@@ -35,6 +33,7 @@
 예시한 Classification들은 결과값 Y가 2가지를 가진다. 예시에서 암검진이라면
 양성은 1을 음성은 0, 즉 Y를 수학으로 모델링하면 0 혹은 1을 같는다.
 0은 Negative Class (ex. Benign Tumor) 이며 1은 Positive Class (ex. malignant tumor) 이다.
+![classifcation01](https://github.com/hephaex/ML_class/blob/master/week3/week3_01_classification_01.png)
 
  - 0: Negative Class
    - 정상 값, 구분을 원하지 않은 값
@@ -57,13 +56,14 @@
 여기서 만약 tumor size가 아주 특이한 값(큰값을 가지다면)
 Linear Regression에 의해서 htheta(x)는 0.5에서 더 큰 값으로 바뀔 것이다.
 이렇게 되면 tumor size에 대한 일부는 양성이지만 음성으로 판정될 수 있다.
+![classifcation02](https://github.com/hephaex/ML_class/blob/master/week3/week3_01_classification_02.png)
 
 따라서 linear regression은 classifcation 문제에 잘 사용하지 않는다.
 
 Classification: y = 0, y = 1의 이산값을 가지면 htheta(x)는 > 1 or < 0 이다.
 logistic regression은 0 =< htheta(x) =< 1 이 되며,
 역사적인 이유로 classification을 logistic regression 이라고 한다.
-
+![classifcation03](https://github.com/hephaex/ML_class/blob/master/week3/week3_01_classification_03.png)
 
 
 * Hypothesis Representation
