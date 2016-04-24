@@ -66,5 +66,40 @@ logistic regression은 0 =< htheta(x) =< 1 이 되며,
 ![classifcation03](https://github.com/hephaex/ML_class/blob/master/week3/week3_01_classification_03.png)
 
 
-* Hypothesis Representation
-* Decision Boundary
+## Hypothesis Representation
+* 예시로 살펴본 암 검진에서 종양을 악성과 양성으로 검증하기 위한 가설을 세웠다. 
+ - 종양이 크기에 따라(ᆨx) 학습하려는 현상을 만족하는 가설을 위해서 여러가지 모델 중
+ - 선형회기 모델(Linear regression model) 을 사용하기로 하였다.
+ - 선형 회기 모델에 따른 가설 검증(예측 값)은 음성(0)과 양성(1)사이로 하였다. 
+   - htheta(x) 는 0 =< htheta(x) =< 1 로
+ - 이것을 htheta(x) = theta Transpose x로 나타낼 수 있다.
+   - htheta(x) = thetaT * x
+ - 가설 htheta(x)를 logisting regression 모델을 위해서 조금 수정하면.
+   - g(htheta T * x) 로 변환하였다.
+ - 여기서 G 변환함수는
+   - g(z) : 1 / (1 + e^-z)
+ - G 변환함수를 Sigmoid function 혹은 logistic function 이라고 한다.
+ - G 변환함수를 다시 정리해서 쓰면
+ - htheta(x)
+   - = 1 / (1 + e^-z)
+   - = 1 / (1 + e^-(theta T * x) )
+ - G 함수에 대해서 그래프로 그려 보면
+   - Z값이 음수 (z < 0) 일 때 0에 무한히 가까운 값에서 부터 증가하여 0.5까지 증가한다.
+   - Z값이 양수 (z > 0) 일 때 0.5부터 증가하여 1에 무한히 가까운 값까지 증가한다. 
+   - 왜냐하면 htheta(z) 는 0과 1 사이 값을 가지기 때문이다. 
+
+* 가설의 결과 값을 해석해 봅시다.
+* 가설 htheta(x)는 입력 X에 대해서 결과 Y가 1(양성)이때 확률이라고 하면.
+ - ᆨx = [ x0, x1 ] = [ 1, tumorSize ] 가 된다.
+ - 여기서 htheta(x)에 x(종양 크기, tumorSize) 를 0.7이라면 결과가 양성(1)인 확률이다.
+
+* 이것을 주어진 x와 매개변수 theta가 있을 때 결과(y)가 1인 확률이라면
+ - htheta(x) = P(y=1 | x, theta) 가 된다.
+
+* 종양은 양성(1)과 음성(0)으로 구분되므로.
+ - P(y = 0 | x, theta) + P(y = 1 | x, theta) = 1 이다.
+ - 이것을 P(y = 0 | x, theta) 값을 기준으로 정리하면.
+   - P(y = 0 | x, theta) = ᇂᇂ1 - P(y = 1 | x, theta)
+   
+
+## Decision Boundary
