@@ -30,7 +30,7 @@
 ## Classification and Representation
 
 ### Classification
-* ᆱClassification(군집화)
+*ᆱClassification(군집화)
  - 입력 x에 대하여 이것이 어떤 곳(Y)가 될지 구분하는 방법이다.
 
 * Classification 예시
