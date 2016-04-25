@@ -170,10 +170,24 @@ hθ(x) = g(θ0 + θ1x1 + θ2x2) 라고 해보자.
 
 # Logistic Regression Model
 
+![Non-linear decision boundary 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_04_Non-linearDecisionBoundary_01.png)
+![Non-linear decision boundary 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_04_Non-linearDecisionBoundary_02.png)
+
 ## Cost Function
 
-## Simplified Cost Function and Gradient Descent
+![Cost Function 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_01.png)
+![Cost Function 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_02.png)
+![Cost Function 03](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_03.png)
+![Cost Function 04](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_04.png)
+![Cost Function 05](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_05.png)
+![Cost Function 06](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_06.png)
+![Cost Function 07](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_07.png)
 
+## Simplified Cost Function and Gradient Descent
+![ᆭSimplified Cost Function and Gradient Descent 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_04_Non-linearDecisionBoundary_01.png)
+![ᆭSimplified Cost Function and Gradient Descent 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_04_Non-linearDecisionBoundary_02.png)
+![ᆭSimplified Cost Function and Gradient Descent 03](https://github.com/hephaex/ML_class/blob/master/week3/week3_04_Non-linearDecisionBoundary_03.png)
+![ᆭSimplified Cost Function and Gradient Descent 04](https://github.com/hephaex/ML_class/blob/master/week3/week3_04_Non-linearDecisionBoundary_04.png)
 ## Advanced Optimization
  로지스틱 회기(Logistic regression)에서 theta에 대한 비용함수(cost)를 최소화하는
  방법인 경사하강법(Gradient Descent)에 대해서 이야기 했습니다.
@@ -195,7 +209,8 @@ Cost Function J(theta) 에서 theta에 대하여 cost function J(theta)가 최�
 
 로 정리할 수 있으며 cost function J(theta)와 theta에 대한 편미분 J(theta)로
 나타낼 수 있습니다.
-
+![Advanced Optimization 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_07_AdvancedOptimization_01.png)
+![Advanced Optimization 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_07_AdvancedOptimization_02.png)
 최적화 하는 알고리즘
 - Gradient descent
   - 선형 회기 분석에서 사용했음.
@@ -243,6 +258,8 @@ gradient object기능을 활성화하는 의미이다.
 ## Multiclass Classification: One-vs-all
 multiclass(여러 종류)를 classification(구분)할때 어려움.
 
+![Multiclass Classification 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_08_MulticlassClassificationProblem_01.png)
+![Multiclass Classification 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_08_MulticlassClassificationProblem_02.png)
 
 예싷1.) e-mail을 구분하거나 인식표를 붙일때 4가지로 다양하게 구분을 할 수 있다. 
  - work    | y = 1
