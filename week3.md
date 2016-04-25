@@ -1,26 +1,27 @@
-# Machine Learing
+# Machine Learing Note (week#3)
 * progress: week #3
 * 
-* date: 2016.04.??
+* date: 2016.04.26
 
-## Classification and Representation
-* Classification
-* Hypothesis Representation
-* Decision Boundary
+## week3 content
+* Classification and Representation
+ - Classification
+ - Hypothesis Representation
+ - Decision Boundary
 
-## Logistic Regression Model
-* Cost Function
-* Simplified Cost Function and Gradient Descent
-* Advanced Optimization
+* Logistic Regression Model
+ - Cost Function
+ - Simplified Cost Function and Gradient Descent
+ - Advanced Optimization
 
-## Muliclass Classification
-* Multiclass Classification: One-vs-all
+* Muliclass Classification
+ - Multiclass Classification: One-vs-all
 
-## Solving the Problem of Overfitting
-* The Problem of Overfitting
-* Cost Function
-* Regularized Linear Regression
-* Regularized Logistic Regression
+* Solving the Problem of Overfitting
+ - The Problem of Overfitting
+ - Cost Function
+ - Regularized Linear Regression
+ - Regularized Logistic Regression
 
 ## Classification and Representation
 
