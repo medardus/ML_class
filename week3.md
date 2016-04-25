@@ -126,6 +126,47 @@
 ![hypothesis representation07](https://github.com/hephaex/ML_class/blob/master/week3/week3_02_hypothesis_representation_07.png)   
 
 ## Decision Boundary
+hθ(x) = g(θ0 + θ1x1 + θ2x2) 라고 해보자.
+![Decision Boundary 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_03_DecisionBoundary_01.png)
+
+여기서 θ0, θᇂᇂ1, θ2를 예를 들면.
+ - θ0 = -3
+ - θ1 =  1
+ - θ2 =  1
+라고 하면 이 θ 값에 대한 벡터는
+> [-ᆸ3 ;
+>  1 ;
+>  1  ]
+이 된다.
+
+이것에 전치행렬 θT로 바꾸면
+* θT= [-3,1,1] 이다.
+
+* ᆷz = θT 라고 하면, y = 1 일때
+> -3x0 + 1x1 + 1x2 >= 0
+> -3 + x1 + x2 >= 0
+> 가 된다.
+>
+> 이것을 바꾸서 풀어 쓰면,
+>
+> (x1 + x2 >= 3) 일때 y = 1 로 예상할 수 있고,
+> x1 + x2 = 3 을 그래프로 그리면
+> ![Decision Boundary 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_03_DecisionBoundary_02.png)
+> 이것을 **decision boundary** 라고 한다.
+
+그림에서 파랑과 보라색으로 두개의 집합이 나뉘었다.
+- 파랑: false 라고 정의하고
+- 보라: true 라고 정의하면.
+> 이것을 나누는 선을 글 수 있는데
+> 이 선은 가설함수 hθ(x) = 0.5 로 나타낼 수 있다.
+>
+> 여기서 가설함수에 따라서 경계가 나누었고,
+> 이것을 이용하여 다른 입력에 대해서도 구분을 할 수 있게 된다.
+>
+> 예를 들면
+> 5 - x1 > 0
+> 5 > x1 이라면
+> 결과는 y = 1 이 된다.
 
 # Logistic Regression Model
 
