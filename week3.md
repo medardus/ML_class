@@ -30,8 +30,8 @@
 ## Classification and Representation
 
 ### Classification
-*ᆱClassification(군집화)
- - 입력 x에 대하여 이것이 어떤 곳(Y)가 될지 구분하는 방법이다.
+**ᆱClassification(군집화)**
+- 입력 x에 대하여 이것이 어떤 곳(Y)가 될지 구분하는 방법이다.
 
 * Classification 예시
  - E-mail: Spam / Not Spam?
@@ -57,6 +57,7 @@
    - ex.) 이메일(email): 스팸이다.(Spam)
    - ex.) 암검진에서 음성(Malignant tumor)
    - ex.) 온라인 결재에서 (online transactions): 사기거래이다.(frudulent)
+
 ![classifcation01](https://github.com/hephaex/ML_class/blob/master/week3/week3_01_classification_01.png)
 
 예시에서 암검진으로 가설 htheta(x)가 0.5 라고 하면
@@ -67,6 +68,7 @@
  - Linear Regression에 의해서 htheta(x)는 0.5에서 더 큰 값으로 바뀔 것이다.
  - 이렇게 되면 tumor size에 대한 일부는 양성이지만 음성으로 판정될 수 있다.
  - 따라서 linear regression은 classifcation 문제에 잘 사용하지 않는다.
+
 ![classifcation02](https://github.com/hephaex/ML_class/blob/master/week3/week3_01_classification_02.png)
 
 **이항 계층 문제(binary class probelm)의 특징**
@@ -77,6 +79,7 @@
    - 생성된 값 (Y)는 0 =< y =< 1 이다.
    - 역사적인 이유로 classification을 logistic regression 이라고 한다.
    - **Logistic regression is a classification algorithm**
+
 ![classifcation03](https://github.com/hephaex/ML_class/blob/master/week3/week3_01_classification_03.png)
 
 ## Hypothesis Representation (가설 표현)
@@ -85,7 +88,7 @@
  - 여러가지 모델 중선형회기 모델(Linear regression model) 을 사용하기로 하였다.
  - 선형 회기 모델에 따른 가설 검증(예측 값)은 음성(0)과 양성(1)사이로 하였다. 
    - hθ(x) 는 0 =< hθ(x) =< 1 로
-![hypothesis representation01](https://github.com/hephaex/ML_class/blob/master/week3/week3_02_hypothesis_representation_01.png)
+   - ![hypothesis representation01](https://github.com/hephaex/ML_class/blob/master/week3/week3_02_hypothesis_representation_01.png)
  - 이것을 htheta(x) = theta Transpose x로 나타낼 수 있다.
    - hθ(x) = (θT x)
  - 가설 hθ(x))를 logisting regression 모델을 위해서 조금 수정하면.
@@ -93,15 +96,15 @@
  - 여기서 G 변환함수는
    - g(z) : 1 / (1 + e^-z)
    - z: real number
-![hypothesis representation02](https://github.com/hephaex/ML_class/blob/master/week3/week3_02_hypothesis_representation_02.png)
+   - ![hypothesis representation02](https://github.com/hephaex/ML_class/blob/master/week3/week3_02_hypothesis_representation_02.png)
  - 변환된 G 함수를 Sigmoid function 혹은 logistic function 이라고 한다.
  - 변환된 G 함수를 다시 정리해서 쓰면
  - htheta(x)
    - = 1 / (1 + e^-z)
    - = 1 / (1 + e^-(θT * x) )
-![hypothesis representation03](https://github.com/hephaex/ML_class/blob/master/week3/week3_02_hypothesis_representation_03.png)   
+   - ![hypothesis representation03](https://github.com/hephaex/ML_class/blob/master/week3/week3_02_hypothesis_representation_03.png)   
  - G 함수에 대해서 그래프로 그려 보면
-![hypothesis representation04](https://github.com/hephaex/ML_class/blob/master/week3/week3_02_hypothesis_representation_04.png)
+   - ![hypothesis representation04](https://github.com/hephaex/ML_class/blob/master/week3/week3_02_hypothesis_representation_04.png)
    - Z값이 음수 (z < 0) 일 때 0에 무한히 가까운 값에서 부터 증가하여 0.5까지 증가한다.
    - Z값이 양수 (z > 0) 일 때 0.5부터 증가하여 1에 무한히 가까운 값까지 증가한다. 
    - 왜냐하면 htheta(z) 는 0과 1 사이 값을 가지기 때문이다. 
@@ -111,10 +114,10 @@
  - ᆨx = [ x0, x1 ] = [ 1, tumorSize ] 가 된다.
  - 여기서 htheta(x)에 x(종양 크기, tumorSize) 를 0.7이라면 결과가 양성(1)인 확률이다.
    - hθ(x) = 0.7 : 70%의 확률로 양성이다. 
-![hypothesis representation05](https://github.com/hephaex/ML_class/blob/master/week3/week3_02_hypothesis_representation_05.png)
+   - ![hypothesis representation05](https://github.com/hephaex/ML_class/blob/master/week3/week3_02_hypothesis_representation_05.png)
 * 이것을 주어진 x와 매개변수 theta가 있을 때 결과(y)가 1인 확률이라면
  - hθ(x) = P(y = 1 | x, θ) 가 된다.
-![hypothesis representation06](https://github.com/hephaex/ML_class/blob/master/week3/week3_02_hypothesis_representation_06.png)
+ - ![hypothesis representation06](https://github.com/hephaex/ML_class/blob/master/week3/week3_02_hypothesis_representation_06.png)
 * 종양은 양성(1)과 음성(0)으로 구분되므로.
  - P(y = 0 | x, θ) + P(y = 1 | x, θ) = 1 이다.
 *이것을 P(y = 0 | x, θ) 값을 기준으로 정리하면.
