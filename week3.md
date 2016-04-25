@@ -1,9 +1,13 @@
-# Machine Learing Note (week#3)
-* progress: week #3
-* 
+# Machine Learing Note (week #3)
+* Logistic Regression
+* progress: #3 week
 * date: 2016.04.26
 
-## week3 content
+* Note:
+ - 1주와 2주는 supervised learing 에서 Linear Regression(선형 회귀)을 공부했다.
+ - 3주는 classification(군집화)에 대하여 공부한다. 
+
+## week #3 content
 * Classification and Representation
  - Classification
  - Hypothesis Representation
@@ -26,46 +30,54 @@
 ## Classification and Representation
 
 ### Classification
-* Classification 예시
- - Email: Spam / Not Spam?
- - Online Trasactions: Fraudulent (Yes / No)?
- - Tumor: Malignant / Benign?
+* ᆱClassification(군집화)
+ - 입력 x에 대하여 이것이 어떤 곳(Y)가 될지 구분하는 방법이다.
 
-예시한 Classification들은 결과값 Y가 2가지를 가진다. 예시에서 암검진이라면
-양성은 1을 음성은 0, 즉 Y를 수학으로 모델링하면 0 혹은 1을 같는다.
-0은 Negative Class (ex. Benign Tumor) 이며 1은 Positive Class (ex. malignant tumor) 이다.
+* Classification 예시
+ - E-mail: Spam / Not Spam?
+   - 어떤 이메일이 스팸으로 구분할지? 아닌지(정상)?
+ - Online Trasactions: Fraudulent (Yes / No)?
+   - 온라인 쇼핑에서 사기가 의심되는지? (사기/정상)
+ - Tumor: Malignant / Benign?
+   - Tumor(종양)이 Malignant(악성)인지? Benign(음성)인지? 
+
+위의 3가지 예시는 Classification들은 결과값 Y가 2가지를 가진다.
+ - 이것을 binary class problems (2항 계층 문제)라고 한다. 
+ - 우선은 결과 Y가 2가지 인것부터 공부하고
+ - 이후 결과 Y가 다양한 값을 가지는 경우도 공부하자.
+
+* Binary class problem에서 예측값(출력,Y)은 0 혹은 1이다.
+ - 0: negative class (absence of something)
+   - 정상 값, 구분을 원하지 않은 값
+   - ex.) 이메일(email): 스팸이 아니다.(Not Spam)
+   - ex.) 암검진에서 음성(Benign tumor)
+   - ex.) 온라인 결재에서 (online transactions): 정상거래이다.(No frudulent)
+ - 1: Positive class (presence of something)
+   - 비정상 값, 우리가 구분하길 원하는 값
+   - ex.) 이메일(email): 스팸이다.(Spam)
+   - ex.) 암검진에서 음성(Malignant tumor)
+   - ex.) 온라인 결재에서 (online transactions): 사기거래이다.(frudulent)
 ![classifcation01](https://github.com/hephaex/ML_class/blob/master/week3/week3_01_classification_01.png)
 
- - 0: Negative Class
-   - 정상 값, 구분을 원하지 않은 값
-   - ex) email: Not Spam
-   - ex) tumor: benign tumor
-   - ex) online transactions: No frudulent
- - 1: Positive  Class
-   - 비정상 값, 우리가 구분하길 원하는 값
-   - ex) email: Spam
-   - ex) tumor: malignant tumor
-   - ex) online transactions: frudulent
-
-우선은 결과가 2가지 인것부터 공부하고 Y가 다양한 값을 가지는 경우도 공부하자.
-
-암검진으로 예시를 들어 설명하면,
-결과 htheta(x)가 0.5 라고 하면
- htheta(x) >= 0.5 라면 y = 1로 예측할 수 있다.
- htheta(x) <  0.5 라면 y = 0로 예측할 수 있다.
+예시에서 암검진으로 가설 htheta(x)가 0.5 라고 하면
+ - htheta(x) >= 0.5 라면 y = 1로 예측할 수 있다.
+ - htheta(x) <  0.5 라면 y = 0로 예측할 수 있다.
 
 여기서 만약 tumor size가 아주 특이한 값(큰값을 가지다면)
-Linear Regression에 의해서 htheta(x)는 0.5에서 더 큰 값으로 바뀔 것이다.
-이렇게 되면 tumor size에 대한 일부는 양성이지만 음성으로 판정될 수 있다.
+ - Linear Regression에 의해서 htheta(x)는 0.5에서 더 큰 값으로 바뀔 것이다.
+ - 이렇게 되면 tumor size에 대한 일부는 양성이지만 음성으로 판정될 수 있다.
+ - 따라서 linear regression은 classifcation 문제에 잘 사용하지 않는다.
 ![classifcation02](https://github.com/hephaex/ML_class/blob/master/week3/week3_01_classification_02.png)
 
-따라서 linear regression은 classifcation 문제에 잘 사용하지 않는다.
-
-Classification: y = 0, y = 1의 이산값을 가지면 htheta(x)는 > 1 or < 0 이다.
-logistic regression은 0 =< htheta(x) =< 1 이 되며,
-역사적인 이유로 classification을 logistic regression 이라고 한다.
+이항 계층 문제(binary class probelm)의 특징
+ - Classification:
+   - y = 0 이나, y = 1의 이산값을 가질 때 htheta(x)는 > 1 혹은 < 0 이다.
+   - Hypothesis can give values large than 1 or less than 0
+ - Logistic regression:
+   - 생성된 값 (Y)는 0 =< y =< 1 이다.
+   - 역사적인 이유로 classification을 logistic regression 이라고 한다.
+   - **Logistic regression is a classification algorithm**
 ![classifcation03](https://github.com/hephaex/ML_class/blob/master/week3/week3_01_classification_03.png)
-
 
 ## Hypothesis Representation
 * 예시로 살펴본 암 검진에서 종양을 악성과 양성으로 검증하기 위한 가설을 세웠다. 
