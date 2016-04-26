@@ -168,10 +168,25 @@ hθ(x) = g(θ0 + θ1x1 + θ2x2) 라고 해보자.
 > 5 > x1 이라면
 > 결과는 y = 1 이 된다.
 
-# Logistic Regression Model
+## Non-linear decision boundaries
+비 선형 데이터는 logistic regression 하기 어려움이 있다.
+- 고차항이 있을 수 있기 때문이다.
+- 예를 들면 hθ(x) = g(θ0 * ᆨx^0 + θ1 * x^1 + θ3 * x1^2  +  θ4 * x2^2)
+  - 입력에 대하여 θ에 전치행렬 θT를 쓰면.
+  - [-1,0,0,1,1] 이 된다.
 
-![Non-linear decision boundary 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_04_Non-linearDecisionBoundary_01.png)
+- y = 1 일때
+  - -1 + x12 + x22 >= 0
+  - x1^2 + x2^2 >= 1
+  - 0을 중심으로한 반경 1인 원이 된다.
+  - ![Non-linear decision boundary 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_04_Non-linearDecisionBoundary_01.png)
+
+예시처럼 비선형이라도 복잡하긴 하지만 logistic regression에
+따른 decision boundary를 구할 수 있다.
+더 복잡한 decision boundary를 구한다면 보다 많은 고차항을 사용해서 구할 수는 있다. 
 ![Non-linear decision boundary 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_04_Non-linearDecisionBoundary_02.png)
+
+# Logistic Regression Model
 
 ## Cost Function
 
