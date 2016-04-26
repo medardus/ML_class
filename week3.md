@@ -189,13 +189,30 @@ hθ(x) = g(θ0 + θ1x1 + θ2x2) 라고 해보자.
 # Logistic Regression Model
 
 ## Cost Function
-
-![Cost Function 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_01.png)
-![Cost Function 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_02.png)
+θ의 파라메터를 정하기 위해서 cost fucntion(비용함수)를 사용해서 최적의 값을 구할 수있다.
+> 학습 feature의 수가 m개 있다면 각각의 대응하는 θ는 n+1인 벡터가 된다.
+> ![Cost Function 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_01.png)
+> m examples
+> ![Cost Function 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_02.png)
+> ᆨx0 = 1이다.
+> y ∈ {0,1} : y는 0 혹은 1값을 가진다.
+>
+> hyphotesis 는 
 ![Cost Function 03](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_03.png)
-![Cost Function 04](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_04.png)
-![Cost Function 05](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_05.png)
-![Cost Function 06](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_06.png)
+
+θ에 대한 cost function J(θ)는 
+> ![Cost Function 04](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_04.png)
+>
+> 비용함수 cost(hθ(xi), y) = 1 / 2 * { hθ(xi) - yi }^2
+>
+> 선형회기(linear regression)처럼 학습자료(traing data)가 개별(individual)적이라면
+> 비용함수 cost(hθ(xi), y)를 다음 처럼 고쳐 쓸 수 있다. 
+> ![Cost Function 05](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_05.png)
+>
+> 이것을 다시 개별(individual) 비용의 합으로 근사화하면 
+> 비용항수 J(θ)는
+> ![Cost Function 06](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_06.png)
+
 ![Cost Function 07](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_07.png)
 
 ## Simplified Cost Function and Gradient Descent
