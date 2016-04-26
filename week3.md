@@ -192,13 +192,14 @@ hθ(x) = g(θ0 + θ1x1 + θ2x2) 라고 해보자.
 θ의 파라메터를 정하기 위해서 cost fucntion(비용함수)를 사용해서 최적의 값을 구할 수있다.
 > 학습 feature의 수가 m개 있다면 각각의 대응하는 θ는 n+1인 벡터가 된다.
 > ![Cost Function 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_01.png)
+>
 > m examples
 > ![Cost Function 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_02.png)
-> ᆨx0 = 1이다.
-> y ∈ {0,1} : y는 0 혹은 1값을 가진다.
+>> ᆨx0 = 1이다.
+>> y ∈ {0,1} : y는 0 혹은 1값을 가진다.
 >
 > hyphotesis 는 
-![Cost Function 03](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_03.png)
+> ![Cost Function 03](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_03.png)
 
 θ에 대한 cost function J(θ)는 
 > ![Cost Function 04](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_04.png)
