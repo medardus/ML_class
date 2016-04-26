@@ -252,9 +252,53 @@ y = 0에 대해서
 - grobal minimum이 되므로 gradient descent를 사용할 수 있게 된다.
 
 ## Simplified Cost Function and Gradient Descent
+Logistic regression에서 gradient descent를 적용하기 위해서
+cost function을 바꿨다.
+이를 간소화한 비용 함수라고 한다. 
 ![ᆭSimplified Cost Function and Gradient Descent 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_06_implifiedCostFunctionAndGradientDescent_01.png)
-![ᆭSimplified Cost Function and Gradient Descent 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_06_implifiedCostFunctionAndGradientDescent_02.png)
-![ᆭSimplified Cost Function and Gradient Descent 03](https://github.com/hephaex/ML_class/blob/master/week3/week3_06_implifiedCostFunctionAndGradientDescent_03.png)
+
+예를 들어서 좀 더 자세히 알아보자.
+
+* binary classification(이항 구분)에서 y 는 항상 0, 1이 된다.
+  - cost function (비용함수) 도 y에 따라서 two lines 혹은 two case가 된다.
+  - 두 가지로 표현된 cost function을 하나로 바꾸는 것이 더 효과적이다.
+
+> cost(hθ, (x),y) = -ylog( hθ(x) ) - (1-y)log( 1- hθ(x) )
+
+이때 2가지 가능한 경우에 대해서 좀 더 알아보자.
+
+* y = 1 일 때 cost(hθ, (x), y ) 은?
+  * = -y * log( hθ(x) ) - ( 1 - y ) * log( 1 - hθ(x) )
+  * = -ᇂ1 * log( hθ(x) ) - (0) * log( 1 - hθ(x) )
+  * = ** - log( hθ(x) ) **
+  * /cost function이 간단하게 바뀌었다./
+  
+* y = 0 일 때 cost(hθ, (x), y ) 은?
+  * = -y * log( hθ(x) ) - ( 1 - y ) * log( 1 - hθ(x) )
+  * = -0 * log( hθ(x) ) - ( 1 - 0 ) * log( 1 - hθ(x) )
+  * = ** - log( 1 - hθ(x) ) **
+  * /cost function이 간단하게 바뀌었다./
+  
+정리하면 cost function J(θ) 를 하나로 묶어서 다시 쓰면. 
+
+> ![ᆭSimplified Cost Function and Gradient Descent 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_06_implifiedCostFunctionAndGradientDescent_02.png)
+
+왜 이런 비용함수를 바꾸어 사용할까 ?
+ - 이것은 maximum likelihood estimation의 원리를 사용한 것이다.
+ - 자료가 Gaussian distribution (가우시안 분포)라고 가정할 때 이렇게 적용할 수 있다.
+
+파라미터 θ를 구하려면
+ - cost function (비용함수) J(θ)가 최소가 되는 θ를 찾으면 된다.
+ - 학습을 하지 않고 미래에 올 값들에 대해서도 찾은 파라미터를 사용할 수 있다는 말이 된다.
+ - feature x에 대한 새로운 입력이 주어졌을 때
+ - 우리가 찾은 θ를 이용해서 hyphotesis 를 사용할 수 있다.
+ - 즉 y = 1 일때 주어진 새로운 feature X와 파라메터 θ 를 이용하여.
+ - P( y = 1 | x ; θ ) 를 구할 수 있다.
+ 
+>![ᆭSimplified Cost Function and Gradient Descent 03](https://github.com/hephaex/ML_class/blob/master/week3/week3_06_implifiedCostFunctionAndGradientDescent_03.png)
+
+## 어떻게 logistic regression에서 cost function을 최소화 하는 값을 찾을 것인가?
+
 ![ᆭSimplified Cost Function and Gradient Descent 04](https://github.com/hephaex/ML_class/blob/master/week3/week3_06_implifiedCostFunctionAndGradientDescent_04.png)
 
 ## Advanced Optimization
