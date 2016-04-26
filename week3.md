@@ -297,9 +297,18 @@ cost function을 바꿨다.
  
 >![ᆭSimplified Cost Function and Gradient Descent 03](https://github.com/hephaex/ML_class/blob/master/week3/week3_06_implifiedCostFunctionAndGradientDescent_03.png)
 
-## 어떻게 logistic regression에서 cost function을 최소화 하는 값을 찾을 것인가?
+## How to minimize the logistic regression cost function
+어떻게 cost function J(θ)를 최소화 할지 알아보자.
 
-![ᆭSimplified Cost Function and Gradient Descent 04](https://github.com/hephaex/ML_class/blob/master/week3/week3_06_implifiedCostFunctionAndGradientDescent_04.png)
+* gradient descent 를 사용한다.
+* learnin rate를 사용해서 반복할때 마다 parameter(파라메터)는 update(갱신)한다. 
+
+> ![ᆭSimplified Cost Function and Gradient Descent 04](https://github.com/hephaex/ML_class/blob/master/week3/week3_06_implifiedCostFunctionAndGradientDescent_04.png)
+
+* n 개의 feature가 있다면 θ는 n+1 의 벡터 열이 된다.
+* 이 방정식은 linear regression 선형 회기 모델과 똑같다.
+* 다른 점이라면 가설이 logistic regression을 위해서 우리가 간소화한 정의를 사용한다는 점이다.
+* 따라서 linear regression을 사용하는 것처럼 gradient descent가 잘 동작하는지 검증해야한다.
 
 ## Advanced Optimization
  로지스틱 회기(Logistic regression)에서 theta에 대한 비용함수(cost)를 최소화하는
@@ -310,7 +319,7 @@ cost function을 바꿨다.
 이방법은 Gradient descent(경사하강법)을 사용한 것보다 좀더 빠르게 실행됩니다.
 그리고 좀더 많은 학습대상에서도 유용합니다.
 
-Optimization algorithm
+### Optimization algorithm
 Cost Function J(theta) 에서 theta에 대하여 cost function J(theta)가 최소화되는
 값을 구하는 것이 목적입니다.
 
@@ -322,14 +331,17 @@ Cost Function J(theta) 에서 theta에 대하여 cost function J(theta)가 최�
 
 로 정리할 수 있으며 cost function J(theta)와 theta에 대한 편미분 J(theta)로
 나타낼 수 있습니다.
-![Advanced Optimization 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_07_AdvancedOptimization_01.png)
-![Advanced Optimization 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_07_AdvancedOptimization_02.png)
+
+> ![Advanced Optimization 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_07_AdvancedOptimization_01.png)
+
 최적화 하는 알고리즘
+> ![Advanced Optimization 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_07_AdvancedOptimization_02.png)
+
 - Gradient descent
   - 선형 회기 분석에서 사용했음.
 - Conjugate Gradient
-- BFGS
-- L-BFGS
+- BFGS (Broyden-Fletcher-Goldfarb-Shanno)
+- L-BFGS (limited memory - BFGS)
 
 ᆱGradient Descent에 비하여 Conjugate gradient , BFGS, L-BFGS는 비교
 - Learning Rate (ᆮAlpha)를 지정하지 않아도 된다.
@@ -357,10 +369,12 @@ function [jVal, gradient] = costFunction(theta)
 
 좀더 나아가서 비용함수 J(theta)에 대한 최적화 함수 fminunc를 사용하면.
 
-> options = optimset('GradObj', 'on', 'MaxIter', '100');
-> initialTheta = zeros(2,1);
-> [optTheta, functionVal, exitFlag] ...
->     = fminuc(@contFunction, initialTheta, options);
+```
+options = optimset('GradObj', 'on', 'MaxIter', '100');
+initialTheta = zeros(2,1);
+[optTheta, functionVal, exitFlag] ...
+    = fminuc(@contFunction, initialTheta, options);
+```
 
 여기서 선택가능한 옵션을 지정할 수 있는데, 'gradObj', 'on'이란
 gradient object기능을 활성화하는 의미이다.
@@ -372,7 +386,6 @@ gradient object기능을 활성화하는 의미이다.
 multiclass(여러 종류)를 classification(구분)할때 어려움.
 
 ![Multiclass Classification 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_08_MulticlassClassificationProblem_01.png)
-![Multiclass Classification 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_08_MulticlassClassificationProblem_02.png)
 
 예싷1.) e-mail을 구분하거나 인식표를 붙일때 4가지로 다양하게 구분을 할 수 있다. 
  - work    | y = 1
@@ -392,6 +405,14 @@ multiclass(여러 종류)를 classification(구분)할때 어려움.
  - 눈      | y = 4
 
 이것은 종양검진처럼 0, 1이 아닌 결과값이 다양한 값을 가진다.
+
+* one vs all classification
+ - binary classfication을 사용해서 3가지의 feature에 대해서도 사용하 수 있다.
+ - 삼각형 (1) vs 나머지 (0) hθ1(x)
+ - 사각형 (1) vs 나머지 (0) hθ2(x)
+ - x 표 (1) vs 나머지 (0) hθ3(x)
+ 
+![Multiclass Classification 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_08_MulticlassClassificationProblem_02.png)
 
 # Solving the Problem of Overfitting
 
