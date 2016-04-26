@@ -417,7 +417,9 @@ multiclass(여러 종류)를 classification(구분)할때 어려움.
 # Solving the Problem of Overfitting
 
 ## The Problem of Overfitting
-overfitting
+
+* overfit, underfit, just fit
+![fit](https://github.com/hephaex/ML_class/blob/master/week3/week3_09_advanced_01.png)
 
 - htheta(x) 가
  - too large
@@ -462,9 +464,4 @@ lamda: regulazation parameter,
 이것을 underfitting이라고 한다.
 
 이것을 피하기 위해서 람다 값을 잘 선택해야만 한다. 
-
-
-* Regularized Linear Regression
-선형회기에서는 
-* Regularized Logistic Regression
 
