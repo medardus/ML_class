@@ -202,19 +202,20 @@ hθ(x) = g(θ0 + θ1x1 + θ2x2) 라고 해보자.
 
 θ에 대한 cost function J(θ)는
 > ![Cost Function 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_02.png)
-> 비용함수 cost(hθ(xi), y) = 1 / 2 * { hθ(xi) - yi }^2
->
-> 선형회기(linear regression)처럼 학습자료(traing data)가 개별(individual)적이라면
-> 비용함수 cost(hθ(xi), y)를 다음 처럼 고쳐 쓸 수 있다. 
+ 비용함수 cost(hθ(xi), y) = 1 / 2 * { hθ(xi) - yi }^2
+
+ 선형회기(linear regression)처럼 학습자료(traing data)가 개별(individual)적이라면
+ 비용함수 cost(hθ(xi), y)를 다음 처럼 고쳐 쓸 수 있다. 
 > ![Cost Function 03](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_03.png)
->
-> 이것을 다시 개별(individual) 비용의 합으로 근사화하면 
-> 비용항수 J(θ)는
-> ![Cost Function 04](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_04.png)
+
+이것을 다시 개별(individual) 비용의 합으로 근사화하면 
+비용항수 J(θ)는
+> ![Cost Function 05](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_05.png)
 
 
 * 
-![Cost Function 05](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_05.png)
+
+![Cost Function 04](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_04.png)
 
 ![Cost Function 06](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_06.png)
 
