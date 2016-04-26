@@ -152,11 +152,13 @@ hθ(x) = g(θ0 + θ1x1 + θ2x2) 라고 해보자.
 > (x1 + x2 >= 3) 일때 y = 1 로 예상할 수 있고,
 > x1 + x2 = 3 을 그래프로 그리면
 > ![Decision Boundary 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_03_DecisionBoundary_02.png)
-> 이것을 **decision boundary** 라고 한다.
+
+이것을 **decision boundary** 라고 한다.
 
 그림에서 파랑과 보라색으로 두개의 집합이 나뉘었다.
 - 파랑: false 라고 정의하고
 - 보라: true 라고 정의하면.
+
 > 이것을 나누는 선을 글 수 있는데
 > 이 선은 가설함수 hθ(x) = 0.5 로 나타낼 수 있다.
 >
@@ -171,12 +173,12 @@ hθ(x) = g(θ0 + θ1x1 + θ2x2) 라고 해보자.
 ## Non-linear decision boundaries
 비 선형 데이터는 logistic regression 하기 어려움이 있다.
 - 고차항이 있을 수 있기 때문이다.
-- 예를 들면 hθ(x) = g(θ0 * ᆨx^0 + θ1 * x^1 + θ3 * x1^2  +  θ4 * x2^2)
+- 예를 들면 hθ(x) = g(θ0*x^0 + θ1 * x^1 + θ3 * x1^2  +  θ4 * x2^2)
   - 입력에 대하여 θ에 전치행렬 θT를 쓰면.
   - [-1,0,0,1,1] 이 된다.
 
 - y = 1 일때
-  - -1 + x12 + x22 >= 0
+  - -1 + x1^2 + x2^2 >= 0
   - x1^2 + x2^2 >= 1
   - 0을 중심으로한 반경 1인 원이 된다.
   - ![Non-linear decision boundary 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_04_Non-linearDecisionBoundary_01.png)
@@ -198,31 +200,63 @@ hθ(x) = g(θ0 + θ1x1 + θ2x2) 라고 해보자.
 > - y ∈ {0,1} : y는 0 혹은 1값을 가진다.
 
 θ에 대한 cost function J(θ)는
+>
 > ![Cost Function 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_02.png)
- 비용함수 cost(hθ(xi), y) = 1 / 2 * { hθ(xi) - yi }^2
 
- 선형회기(linear regression)처럼 학습자료(traing data)가 개별(individual)적이라면
- 비용함수 cost(hθ(xi), y)를 다음 처럼 고쳐 쓸 수 있다. 
-> ![Cost Function 05](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_05.png)
+비용함수 cost(hθ(xi), y) = 1 / 2 * { hθ(xi) - yi }^2
+
+선형 회기 모델(linear regression)처럼 학습자료(traing data)가 개별(individual)적이라면
+비용함수 cost(hθ(xi), y)를 다음 처럼 고쳐 쓸 수 있다. 
+> ![Cost Function 03](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_03.png)
 
 이것을 다시 개별(individual) 비용의 합으로 근사화하면 
 비용항수 J(θ)는
-> ![Cost Function 03](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_03.png)
+> ![Cost Function 05](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_05.png)
 
+cost function min J(θ) 값을 찾아야 한다.
+* Linear Regression 에서 J(θ)는 “convex” 형태였다.
+* 그러나 logistic regression에서 non-linear하다면
+* cost function J(θ) 는 non-convex가 된다.
+* non-convex는 gradient descent로는 global minimum값을 구할 수 없다.
+* gradient descent로 구하기 위해서는 convex형으로 바꾸어야만 한다.
 
-* 
+Logistic regression이 non-convex의 형이 되지 않게
+cost function을 바꾸는 방법을 알아보자.
 
-![Cost Function 04](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_04.png)
+## A convex logistic regression cost function 
+Gradient descent가 잘 동작하는 convex Cost function으로 바꾸기 위해서
+log( hθ(x) )로 바꾸었다.
+> ![Cost Function 04](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_04.png)
 
-![Cost Function 06](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_06.png)
+y = 1에 대해서
+* hθ(x) 는 -log( hθ(x) ) 이며
 
-![Cost Function 07](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_07.png)
+> ![Cost Function 06](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_06.png)
+
+* ᆨᆨx 축은 우리가 예측한 입력 값들을 나타낸다.
+* y 축은 예측된 비용함수 값을 나타낸다.
+ - y = 1 일때 hθ(x) = 1 이며,
+ - y = 0 일때 hθ(x)는 0에 가까운 값이다.
+   - 비용함수의 값은 무한대에 가까운 값이다.
+   - hθ(x) = 0, predict P( y=1 | x; θ) = 0) 으로 쓸 수 있다.
+
+y = 0에 대해서
+* hθ(x) 는 -log( 1 - hθ(x) ) 이며
+
+> ![Cost Function 07](https://github.com/hephaex/ML_class/blob/master/week3/week3_05_CostFunction4LogisticRegression_07.png)
+
+* hθ(x) = 0에서 (predict P ( y = 0 |x; θ) = 0)
+
+정리하면 cost function을 convex 형태로 바꾸어서
+- local minimum 을 피하고
+- grobal minimum이 되므로 gradient descent를 사용할 수 있게 된다.
 
 ## Simplified Cost Function and Gradient Descent
-![ᆭSimplified Cost Function and Gradient Descent 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_04_Non-linearDecisionBoundary_01.png)
-![ᆭSimplified Cost Function and Gradient Descent 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_04_Non-linearDecisionBoundary_02.png)
-![ᆭSimplified Cost Function and Gradient Descent 03](https://github.com/hephaex/ML_class/blob/master/week3/week3_04_Non-linearDecisionBoundary_03.png)
-![ᆭSimplified Cost Function and Gradient Descent 04](https://github.com/hephaex/ML_class/blob/master/week3/week3_04_Non-linearDecisionBoundary_04.png)
+![ᆭSimplified Cost Function and Gradient Descent 01](https://github.com/hephaex/ML_class/blob/master/week3/week3_06_implifiedCostFunctionAndGradientDescent_01.png)
+![ᆭSimplified Cost Function and Gradient Descent 02](https://github.com/hephaex/ML_class/blob/master/week3/week3_06_implifiedCostFunctionAndGradientDescent_02.png)
+![ᆭSimplified Cost Function and Gradient Descent 03](https://github.com/hephaex/ML_class/blob/master/week3/week3_06_implifiedCostFunctionAndGradientDescent_03.png)
+![ᆭSimplified Cost Function and Gradient Descent 04](https://github.com/hephaex/ML_class/blob/master/week3/week3_06_implifiedCostFunctionAndGradientDescent_04.png)
+
 ## Advanced Optimization
  로지스틱 회기(Logistic regression)에서 theta에 대한 비용함수(cost)를 최소화하는
  방법인 경사하강법(Gradient Descent)에 대해서 이야기 했습니다.
