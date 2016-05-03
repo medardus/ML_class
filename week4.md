@@ -387,3 +387,20 @@ Logistic regression을 사용해서 neural networks를 표현하여 그리면.
 
 ![example-06](https://github.com/hephaex/ML_class/blob/master/week4/week4_5_NeuralNetworkExample_06.png)
 
+# Multiclass classification
+
+여러개를 분류하는 기계 학습 알고리즘을 만들어 보자.
+
+![multi-01](https://github.com/hephaex/ML_class/blob/master/week4/week4_6_MulticlassClassification_01.png)
+
+* 신경망은 4개의 값을 출력한다.
+ - 출력 1: 0/1 보행자
+ - 출력 2: 0/1 자동차
+ - 출력 3: 0/1 이륜차
+ - 출력 4: 0/1 트럭
+![multi-02](https://github.com/hephaex/ML_class/blob/master/week4/week4_6_MulticlassClassification_02.png)
+
+* 입력 이미지가 보행자라면 출력은 [1, 0, 0, 0] 가 될 것이다.
+* 동일한 방법으로 자동차, 이륜차, 트럭에 대한 출력은 다음과 같다.
+
+![multi-0ᆸ3](https://github.com/hephaex/ML_class/blob/master/week4/week4_6_MulticlassClassification_0ᆻ3.png)
