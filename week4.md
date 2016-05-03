@@ -1,8 +1,8 @@
 # Machine Learing Note (week #4)
 * Neural Networks: Representation
-* progress: #4 week
+* progress: 4주차
 * 
-* date: 2016.05.0ᆨx
+* date: 2016.05.0ᆨ3
 
 * Note:
  - 1주와 2주는 supervised learing 에서 Linear Regression(선형 회귀)을 공부했다.
@@ -36,7 +36,7 @@ Nural network :
 * 왜 다른 알고리즘을 배워야 할까?
  - 기계학습을 위해서 linear regression(선형 회기)와 logistic regression을 배웠다.
  - 복잡한 비선형 문제(complex non-linear hypothesis)를 생각해 보자.
- - [non-linear hypothesis 01](https://github.com/hephaex/ML_class/blob/master/week4/week4_1_Non-Linear_Hypotesis_01.png)
+ - ![non-linear hypothesis 01](https://github.com/hephaex/ML_class/blob/master/week4/week4_1_Non-Linear_Hypotesis_01.png)
  - 지도 학습의 종류 구분 문제(supervised classification problem)으로 이 것을 푼다면.
  - logistic regression을 적용할 것이고,
  - 많은 비 선형 요소(non-linear feature)에 대하여 생각해야만 한다.
@@ -92,4 +92,4 @@ linear regression으로 풀기 어려운 문제를 해결하기 위한 아이디
 신경망을 이용한 방법이 있다.
 그럼 신경망에 대하여 알아보자. 
 
-# Neurons
+# Neurons ᆼand the Brain
