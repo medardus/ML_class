@@ -403,4 +403,6 @@ Logistic regression을 사용해서 neural networks를 표현하여 그리면.
 * 입력 이미지가 보행자라면 출력은 [1, 0, 0, 0] 가 될 것이다.
 * 동일한 방법으로 자동차, 이륜차, 트럭에 대한 출력은 다음과 같다.
 
-![multi-0ᆸ3](https://github.com/hephaex/ML_class/blob/master/week4/week4_6_MulticlassClassification_0ᆻ3.png)
+![multi-0ᆸ3](https://github.com/hephaex/ML_class/blob/master/week4/week4_6_MulticlassClassification_03.png)
+
+
