@@ -267,3 +267,65 @@ linear regression으로 풀기 어려운 문제를 해결하기 위한 아이디
    - 3: layer l의 node3에 mapping
    - 1: layer 1에 mapping
 
+# model representaion II
+출력 hypothesis를 위한 각 요소를 각 단계별로 다시 정리해 보자.
+![mr2-01](https://github.com/hephaex/ML_class/blob/master/week4/week4_4_ModelRepresentation_01.png)
+
+hiden layer 2의 각 요소에 대하여 logistic regression 방법으로 g와 z에 따라 정리해 보자.
+
+* a1 ^ᆻ ᆻ2: layer 2의 첫번째 요소
+ - a1 ^ 2 = g( z1 ^ 2) 가 된다.
+* a2 ^ᆻ ᆻ2: layer 2의 두번째 요소
+ - a3 ^ 2 = g( z2 ^ 2) 가 된다.
+* a3 ^ᆻ ᆻ2: layer 2의 세번째 요소
+ - a3 ^ 2 = g( z3 ^ 2) 가 된다.
+
+![mr2-02](https://github.com/hephaex/ML_class/blob/master/week4/week4_4_ModelRepresentation_02.png)
+
+* z ^2 는 Ɵ ^ 1 * x가 된다.
+ - Ɵ ^ᇂ ᇂ1 : layer 2의 파라메터를 벡터화 한것
+ - x : 입력 값.
+
+* ᆼa ^ 2 = g( z ^ 2 ) 가 된다.
+ - z ^ 2 : [ 3 x 1 ] 벡터 이다.
+ - ᆼa ^ 2 : [ 3 x 1 ] 벡터 이다.
+ - g() : ᆫlogistric regression 함수, 여기서는 sigmoid 함수를 사용.
+
+* 입력 x를 a로 바꾸서 정리하면.
+ - ᆼa ^ 1 : x 가 된다.
+ - 입력 x는 활성화된 a ^ 1이라고 바꿔서 말할 수도 있다.
+
+따라서 a ^ 1, ᆮa ^ 2에 대하여 정리하면.
+* ᆼa ^ 1: 입력을 벡터로 정리
+* a ^ 2: g( z ^ 2)를 계산된 벡터
+
+여기서 z ^ 2 를 계산하면 가설 함수(출력) hƟ(x)를 구하게 된다.
+
+![mr2-03](https://github.com/hephaex/ML_class/blob/master/week4/week4_4_ModelRepresentation_03.png)
+
+* 이겨서 bias를 a0 ^ 2라고 표현할 수 있다.
+* 따라서 a0 ^ 2 가 추가되어 a ^ 2는 [4 x 1] 벡터가 된다.
+* 또한 z ^ 3 = Ɵ ^ 2 * a ^ 2 로 정리 할 수 있다.
+* 다시 가설 함수 (hypotesis theta)로 정리하면
+> hƟ(x) = a ^ 3
+> hƟ(x) = g( z ^ 3 )
+* 이것을 우리는 forward propagation 이라고 한다.
+
+## neural networks learing its own features
+
+Logistic regression을 사용해서 neural networks를 표현하여 그리면.
+![mr2-04](https://github.com/hephaex/ML_class/blob/master/week4/week4_4_ModelRepresentation_04.png)
+
+출력 layer 3을 logistic regression node라고 재 정의할 수 있다.
+
+이때 가설 함수의 결과 값은 hƟ(x) 를 정리하면.
+> hƟ(x) = g( Ɵ10 ^ 2 * a0 ^2 + Ɵ11 ^ 2 * a1 ^2 + Ɵ12 ^ 2 * a2 ^2 + Ɵ13 ^ 2 * a3 ^2 )
+
+* neural network을 logistic regression으로 정리하면 이것은 hidden layer의 값으로 표현된다.
+ - ᆼᇂ a1 ^ 2, a2 ^ 2, a3 ^ 2 처럼 계산된(학습된) 값이다.
+
+* 입력 layer 1에 대해서도 이와 동일한 방법으로 다시 정리할 수 있다.
+
+![mr2-05](https://github.com/hephaex/ML_class/blob/master/week4/week4_4_ModelRepresentation_05.png)
+
+#
