@@ -53,14 +53,14 @@ Nural network :
  - logistic regression또한 linear regresion 문제로 바꿔서 해결하는 방법을 배웠다.
  - linear regression은 ᇂ1-2개의 요소(feature) 문제에 대해서는 잘 적용된다.
  - 요소가 100개가 넘어가면 적용하기 어렵다.
- - [non-linear hypothesis 02](https://github.com/hephaex/ML_class/blob/master/week4/week4_1_Non-Linear_Hypotesis_02.png)
+ - ![non-linear hypothesis 02](https://github.com/hephaex/ML_class/blob/master/week4/week4_1_Non-Linear_Hypotesis_02.png)
  - 고차항(many polynomial terms)에 logistic regression은 적용하기 어렵다. 
 
 ### 예시) 학습할 요소(feature) N이 큰 경우
  기계 학습을 이용한 사물인식 (computer vision)을 예로 들어보자.
 
 사용자가 사진을 제시하고 자동차인지 아닌지 구분하는 기계 학습을 구현한다고 하자.
-[non-linear hypothesis 03](https://github.com/hephaex/ML_class/blob/master/week4/week4_1_Non-Linear_Hypotesis_03.png)
+![non-linear hypothesis 03](https://github.com/hephaex/ML_class/blob/master/week4/week4_1_Non-Linear_Hypotesis_03.png)
 
 자동차 사진을 학습을 시켰고, 자동차가 아닌 것도 함께 학습을 시켰다.
 방법은 우리가 앞서 배운 logistic regression이 될 것이다.
@@ -69,7 +69,7 @@ Nural network :
 어떻게 이 문제를 풀 수 있을까?
 
 기계학습에서 사물을 인식할 때는 행렬로 표현된 화소(matrix pixel)를 사용한다.
-[non-linear hypothesis 04](https://github.com/hephaex/ML_class/blob/master/week4/week4_1_Non-Linear_Hypotesis_04.png)
+![non-linear hypothesis 04](https://github.com/hephaex/ML_class/blob/master/week4/week4_1_Non-Linear_Hypotesis_04.png)
 
 
 * 자동차 인식 (a car recongition)
@@ -79,7 +79,7 @@ Nural network :
  - 두개의 화소 요소를 추출해서 이것으로 자동차 인지 아닌지 판단한다고 할때.
    - 자동차 Cars를 그래프에 + 로 표시
    - 자동차가 아니다.Not cars 를 그래프에 -로 표시
- - [non-linear hypothesis 05](https://github.com/hephaex/ML_class/blob/master/week4/week4_1_Non-Linear_Hypotesis_05.png)   
+ - ![non-linear hypothesis 05](https://github.com/hephaex/ML_class/blob/master/week4/week4_1_Non-Linear_Hypotesis_05.png)   
  - 학습 요소에서 화소를 50 x 50 pixel을 사용한다고 하면.
    - 50 x 50 => 2500 pixels
    - 따라서 n = 2500 이 된다.
