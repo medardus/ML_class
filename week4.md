@@ -328,4 +328,62 @@ Logistic regression을 사용해서 neural networks를 표현하여 그리면.
 
 ![mr2-05](https://github.com/hephaex/ML_class/blob/master/week4/week4_4_ModelRepresentation_05.png)
 
-#
+# Neural network example
+신경 네트워크를 이용해서 비선형 분류과정을 예를 통해서 살펴보자.
+
+![example-01](https://github.com/hephaex/ML_class/blob/master/week4/week4_5_NeuralNetworkExample_01.png)
+* 입력 x1, x2는 이항값 (binary 즉 0이나 1)
+* 출력 y
+ - x1 XNOR x2 (ᆹXNOR = NOT (x1 XOR x2) )
+ - 같은 값을 가지면 부정(0) 이다.
+ - 다른 값을 가지면 긍정(1) 이다.
+
+## Neural network 예시1: ᆮAND function
+
+![example-02](https://github.com/hephaex/ML_class/blob/master/week4/week4_5_NeuralNetworkExample_02.png)
+
+* 입력 x1, x2는 이항값 (binary 즉 0이나 1)
+* 출력 y
+  - y = x1 AND x2
+
+여기서 bias 유니트를 추가하여 다시 그려보자.
+
+![example-03](https://github.com/hephaex/ML_class/blob/master/week4/week4_5_NeuralNetworkExample_03.png)
+
+* 바이어스 유니트는 1
+* 입력 x1, x2는 이항값 (binary 즉 0이나 1)
+* 출력 y
+
+* 파라메터 Ɵ를 정의하면.
+ - Ɵᇂ10 ^ 1 = -30
+ - Ɵ11 ^ 1 = 20
+ - Ɵ12 ^ 1 = 20
+
+* x1, x2를 조합하면 4가지 경우가 되며 이를 표로 다시 정리하면. 
+
+ - 여기서 logistic regression에 사용한 함수는 sigmoid function 이다.
+   - +4.6보다 크면 0.99이상으로 1에 가까운 값이 된다.
+   - -4.6보다 작으면 0.01 이하로 0에 가까운 값이 된다.
+ - ![example-04](https://github.com/hephaex/ML_class/blob/master/week4/week4_5_NeuralNetworkExample_04.png)
+
+* 입력 x1: 1, x2: 1 일때 출력 y: 1이 된다.
+
+## Neural network 예시2: NOT function 
+
+![example-05](https://github.com/hephaex/ML_class/blob/master/week4/week4_5_NeuralNetworkExample_05.png)
+* 입력 x1는 이항값 (binary 즉 0이나 1)
+* 출력 y
+  - y = NOT x1
+
+* 입력 x1: 0 일때 출력 y: 1이 된다.
+
+## Neural network 예시3: XNOR function
+
+* 입력 x1, ᆨᆻx2 는 이항값 (binary 즉 0이나 1)
+* 출력 y
+  - y = NOT ( x1 ᆹXOR x2 )
+  
+* XNOR는 NOT XOR로 바꿔 쓸 수 있다.
+
+![example-06](https://github.com/hephaex/ML_class/blob/master/week4/week4_5_NeuralNetworkExample_06.png)
+
