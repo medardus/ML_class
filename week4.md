@@ -93,3 +93,56 @@ linear regression으로 풀기 어려운 문제를 해결하기 위한 아이디
 그럼 신경망에 대하여 알아보자. 
 
 # Neurons ᆼand the Brain
+
+신경망 네트워크 (neural networks)는 사람 뇌의 기능을 모방하여 만든 것이다.
+* 뇌의 구성하는 신경을 모방하여 1960년대 처음 고안되었다.
+* 1980년대, 1990년대 많이 연구되었다.
+* 1990년대 후반부터 연구는 감소되었다.
+* 감소된 이유는 많은 컴퓨팅 자원을 사용하기 때문이었다. 
+* 최근 2011년 이후 다시 분산 컴퓨팅과 GPU기술이 응용되어 이를 활용한 연구가 재도약하고 있다.
+
+## 뇌 신경망에 대하여 (auditory cortex)
+![brain 04](https://github.com/hephaex/ML_class/blob/master/week4/week4_2_Neuron_and_Braind_04.png)
+
+뇌의 대뇌 피질 (cerebral cortex)는 대뇌 표면에 위치하는 신경세포를 말한다.
+표면적 4밀리미터 이하의 두께이며, 이랑(gyrus)로 구분된다.
+
+뇌의 기능에 따라 연구는 지속되었고, 뇌의 기능 별로 모은 brain map을 그릴 수 있다.
+
+## ᆼaudirory cortex
+* 소리를 듣는 auditory cortex
+ - 사람의 목소리나 물건의 소리는 귀를 통해서 신경 신호로 바뀐다.
+ - 소리의 신경 신호는 신경 네트워크로 연결되어 뇌의 auditory cortex에서 처리된다.
+
+* 실험 auditory cortex로 가는 소리 자극 신호를 끊고, 영상 자극으로 바꾼다면?
+
+![brain 01](https://github.com/hephaex/ML_class/blob/master/week4/week4_2_Neuron_and_Braind_01.png)
+
+* ᆼaudirory cortex는 소리가 아닌 보는 것을 처리한다.
+
+## somatosensory cortex
+* 촉각을 처리하는 somatosensory cortex
+ - 손이나 피부에서 느껴지는 촉각은 통감 세포를 통해서 신경신호라 바뀐다.
+ - 촉각의 신경신호는 신경 네트워크로 연결되어 somatosensory cortex에서 처리된다.
+
+* 실험 somatosensory cortex로 가는 촉각 자극 신호를 끊고, 영상 자극으로 바꾼다면?
+
+![brain 02](https://github.com/hephaex/ML_class/blob/master/week4/week4_2_Neuron_and_Braind_02.png)
+
+* ᆫsomasensory cortex는 촉각이 아닌 보는 것을 처리한다.
+
+## 뇌의 인지에 대한 다른 실험들.
+![brain 03](https://github.com/hephaex/ML_class/blob/master/week4/week4_2_Neuron_and_Braind_03.png)
+
+* 보는 것을 맛으로
+ - 카메라를 머리 위에 놓고 카메라의 신호를 받는다.
+ - 카메라의 회색(gray) 신호를 혀의 자극으로 연결한다.
+ - 영상신호의 펄스가 혀에 자극으로 바꾼다.
+ - 실험자는 보는 것은 맛으로 인지할 수 있다.
+
+* 거리를 자극으로 바꾸어 인지하게 할 수 있다. 
+* 방향을 햅틱 벨트의 자극으로 바꾸어 인지하게 할 수 있다. 
+
+# Model representaion I
+
+
