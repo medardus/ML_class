@@ -144,5 +144,22 @@ linear regression으로 풀기 어려운 문제를 해결하기 위한 아이디
 * 방향을 햅틱 벨트의 자극으로 바꾸어 인지하게 할 수 있다. 
 
 # Model representaion I
+신경 세포를 알아보자.
+- 신경 세포 Neuron
+ - 신경 세포를 그림으로 묘사하면
+ - ![MRI-01](https://github.com/hephaex/ML_class/blob/master/week4/week4_3_ModelRepresentation_01.png)
+
+- 신경 세포 Neuron의 구성
+ - 세포 몸체 (Cell body)
+ - 자극 입력 (dendrites)
+ - 자극 출력 (axon)
+
+![MRI-02](https://github.com/hephaex/ML_class/blob/master/week4/week4_3_ModelRepresentation_02.png)
+* 신경세포는 dendrites를 통하여 다수의 입력을 받는다.
+* 신경세포의 역치 처리를 거쳐서
+* 처리한 결과를 axon을 거쳐서 다음 네트워크로 전달한다.
+
+## 인공 신경망 회로 Artificial Neural Network
+
 
 
