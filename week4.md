@@ -161,5 +161,109 @@ linear regression으로 풀기 어려운 문제를 해결하기 위한 아이디
 
 ## 인공 신경망 회로 Artificial Neural Network
 
+신경망 네트워크를 모방하여 만든 것이 인공 신경망 이다.
 
+* 인공 신경망 회로의 구성
+ - 여러개의 입력 (input wire)
+ - 처리를 하는 (logistic unit)
+ - 처리 결과를 출력 (output wire)
+
+![MRI-03](https://github.com/hephaex/ML_class/blob/master/week4/week4_3_ModelRepresentation_03.png)
+
+인공 신경망의 입력을 수학적 모델로 바꾸어 보자.
+
+* 입력 X로 표현, ᆯ가중치를 theta 로 표현
+ - x1 입력, x1의 가중치를 theta1 으로 표현 
+ - ᆨx2 입력, x1의 가중치를 theta2 으로 표현 
+ - x3 입력, x1의 가중치를 theta3 으로 표현 
+
+* 역치 처리 Logistic unit
+ - 역치 처리를 위한 logistic unit은 여러가지 수학 모델로 표현할 수있다.
+ - 우리는 지난 시간에 logistic regression에서 사용한 sigmoid function을 사용하자.
+ - hypoteses는 hƟ(x) = 1 / ( 1 + e^( - Ɵ * T * X) ) 가 된다.
+
+* bias unit
+ - ᆨ입력 중에서 x0에 해당하는 것을 bias unit 이라고 한다.
+ - x0 * theta0 => theta0 이므로
+ - 이것은 흔히 1로 사용한다.
+
+* weight
+ - 각각의 입력에 대한 변수 값으로 theta로 사용했다.
+ - Ɵ 벡터를 파라메터 혹은 가중치(weight) 라고 한다.
+
+이것을 다수의 인공 신경망으로 그리면 다음처럼 된다.
+
+![MRI-04](https://github.com/hephaex/ML_class/blob/master/week4/week4_3_ModelRepresentation_04.png)
+
+다수의 인공 신경망이 연결된 인공 신경망 네트워크를 좀 더 자세히 알아보자.
+
+ᆨᇂ* 입력 x1, x2, x3에 대하여.
+ - 입력을 인공 신경망의 첫 단계(layer 1)라고 하고 한다.
+  - 입력 x1: a1 ^ 1
+  - 입력 x2: a2 ^ 1
+  - 입력 x3: a3 ^ 1
+ - 입력에 대하여 연결된 인공 신경망의 두번째 단계(layer 2)를 a라고 표현한다.
+  - ᆼlayer 2에는 3개의 neuron이 있다.
+  - a1 ^ 2
+  - a2 ^ 2
+  - a3 ^ 2
+ - 인공 신경망의 두번째 단계(layer 2)에서 연결된 세번째 단계 (layer third)를 표현해 보자.
+  - 세번째 단계는 출력과 연결된다.
+  - layer 3에는 1개의 neuron이 있다.
+  - a1 ^ 3
+
+* 인공 신경망에서 layer에 대한 표현
+ - layer 1를 input layer 라고 한다.
+ - layer 3를 output layer 라고 한다.
+ - layer 2를 hidden layer 라고 한다.
+   - hidden layer의 처리 값은 지정할 수 없다.
+   - 많은 수의 hidden layer가 있을 수 있다.
+
+## Neural network의 표현 방식
+
+* a i ^ (j): activation of unit i in layer j
+ - a1 ^2 를 2번째 레이어의 1번째 신경망 유닛이라고 한다.
+ - ᆼ이 유니트가 활성화 되면 다음 레이어로 전달 될 것이다.
+
+![MRI-05](https://github.com/hephaex/ML_class/blob/master/week4/week4_3_ModelRepresentation_05.png)
+
+* theta ^(j): matrix of parameters controlling in function mapping from layer y to layer j + 1
+ - theta는 하나의 레이어에서 다음 레이어로 전달되는 신경망 유닛의 파라메터 값이다.
+ - S j: layer j의 유니트이 있으면 다음 layer는 
+ - ᆫᆭᆭS j+1: layer j + 1의 유니트가 있게 되며
+ - 파라메터는 layer (j + 1) 의 유니트 수와 같기 때문에 S j+1 개가 있게 된다.
+ - 따라서 Ɵ ^j : [ᆫS j+1 x ᆫS j+1] 행렬(matrix)이 된다. 
+
+* matrix Ɵ에 대해서
+ - 행의 길이는 (column length)는 층(layer) 수 만큼 된다.
+ - 열의 길이는 bias unit을 포함하였기 때문에 층(layer)수에서 1 더한 값 (layer +1)이 된다.
+ - 예시에서는 Ɵ 행렬은 [3 x 4] 이 된다.
+ 
+![MRI-06](https://github.com/hephaex/ML_class/blob/master/week4/week4_3_ModelRepresentation_06.png)
+
+* layer 2에서 사용하는 입력을 보면
+ - x0: 1로 설정한 bias
+ - x1: 입력에서 연결
+ - ᆨᆻx2: 입력에서 연결
+ - x3: 입력에서 연결
+
+* 가설의 출력 (hypothesis) layer 3에서 사용하는 입력을 보면
+ - layer2의 방식과 동일하지만 입력 x가 아닌 값을 사용하는 것을 알 수 있다.
+
+* hidden layer (예시에서는 layer 2)에서 활성화되는 값은
+ - 전 단계 층에서 사용한 출력의 선형 조합이다.
+ - logistic regression에서 사용한 sigmoid function 으로 표현할 수있다.
+ - hidden layer 2의 Ɵ^ᇂ1 은 [3 x 4] dimension을 같는 matrix이다.
+ - output layer 3의 Ɵ^ᆻ2 는 [1 x 4] dimension을 같는 matrix이다.
+
+이것을 정리하면 모든 노드에서 파라메터 값을 정의할 수 있게 된다. 
+
+* 모든 노드에서 Ɵji ^l 라고 하면.
+ - j : 2개의 첨자중 첫번째: 1부터 layer l+1 의 범위이다.
+ - i : 2개의 첨자중 두번째: 0부터 layer l의 범위이다.
+ - l : layer의 값
+ - 예시 Ɵᇂ13 ^1
+   - 1: layer l+1의 node 1에 mapping
+   - 3: layer l의 node3에 mapping
+   - 1: layer 1에 mapping
 
