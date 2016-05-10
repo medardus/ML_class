@@ -280,3 +280,32 @@ back propagation은 forward propagation과 비슷하게 나아 갈 것이지만 
 
 ![bpi-08](https://github.com/hephaex/ML_class/blob/master/week5/week5_03_BackPropagationIntuition_08.png)
 
+
+## back propagation의 의미 
+
+** Forward propagation **
+* 입력된 training data로부터 각 신경망을 통해서 결과값 output을 계산한다.
+ - input layer -> hidden -> output 으로 순차적으로 계산된다.
+ - 순차(forward) 전이 (propagation)라 한다.
+
+** Back propagation **
+* 출력 레이어에서 기대 값과 계산된 값의 차이가 error이 된다.
+ -  이 error를 각 레이어를 거슬러 올라가면서 각 레이어 값을 구한다.
+ - 즉 이전 레이어가 지금 레이어에 얼마나 영향을 주었는지 계산 하는 것이다.
+ - output -> hidden 으로 역 순으로 계산된다.
+ - 역(back) 전이(propagation)라 한다.
+
+** back propagation 의 잇점**
+* Backpropagtaion algorithm은
+ - 결과값이 서로 연결된 chain rule을 사용하므로,
+ - 계산량을 대폭 줄어주는 알고리즘이다.
+ - 각각의 매개 변수(paramter)를 계산할 때 병렬화(parallelization)이 쉽다.
+ - 알고리즘를 잘 설계하면 memory도 많이 아낄 수 있다.
+ - 많은 neural network에서 학습을 갱신하는 알고리즘으로 backpropagtaion을 사용한다.
+ 
+
+** backpropagation algorithm의 2가지 실행 단계**
+* propagation phase
+ - training input에서 에러, 혹은 각 뉴런들의 변화량을 계산한다.
+* weight update phase
+ - prapagation phase에서 계산 값을 이용해서 weight(theta)를 update한다.
