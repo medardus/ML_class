@@ -238,3 +238,45 @@ training set에 대하여 반복된 루프를 해서 delta를 계산해보자.
 여기서 정규화 항을 고려하지 않는 다면 j가 0이 되기 때문에,
 신경망에서 비용함수를 구할 수 있게 되었다.
 
+## back propagation intuition
+
+그림과 함께 forward propagation과 back propagation을 예를 들어 살펴보자.
+
+![bpi-01](https://github.com/hephaex/ML_class/blob/master/week5/week5_03_BackPropagationIntuition_01.png)
+
+여기에 input layer (xi, yi)를 입력해 보자.
+그리고 각 레이어를 따라가면서 forward propagation을 구해 보자. 
+![bpi-02](https://github.com/hephaex/ML_class/blob/master/week5/week5_03_BackPropagationIntuition_02.png)
+
+sigmoid 함수를 적용하면 각 레이어에서 z값을 구할 수 있다.
+
+![bpi-0ᆸ3](https://github.com/hephaex/ML_class/blob/master/week5/week5_03_BackPropagationIntuition_03.png)
+
+forward propagation이 끝났다면 back propagation을 할 차례이다.
+back propagation은 forward propagation과 비슷하게 나아 갈 것이지만 방향이 반대이다.
+
+여기서 출력은 이진 분류이므로 마지막 레이어는 a1^4만 있게 될 것이다.
+
+신경망에서 비용함수는
+>![bpi-04](https://github.com/hephaex/ML_class/blob/master/week5/week5_03_BackPropagationIntuition_04.png)
+이다. 
+
+이것을 비용함수를 i에 대해서 다시 써 보면,
+>![bpi-05](https://github.com/hephaex/ML_class/blob/master/week5/week5_03_BackPropagationIntuition_05.png)
+
+δ는 오류값이므로 이것을 비용함수로 정리하면
+>![bpi-06](https://github.com/hephaex/ML_class/blob/master/week5/week5_03_BackPropagationIntuition_06.png) 
+로 쓸 수 있다.
+
+그럼 back propagation을 해보자.
+
+![bpi-07](https://github.com/hephaex/ML_class/blob/master/week5/week5_03_BackPropagationIntuition_07.png)
+
+δᇂᇂ1^4 에서
+> δᇂ1 ^ 4 = y ^ i - a1 ^ 4
+이므로
+> δ2 ^ 3 = (Ɵ12 ^ 3) * ( δ1 ^ 3) + (Ɵ22 ^ 3) * (δ2 ^3)  
+이 된다.
+
+![bpi-08](https://github.com/hephaex/ML_class/blob/master/week5/week5_03_BackPropagationIntuition_08.png)
+
