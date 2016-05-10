@@ -103,3 +103,138 @@ Neuroal Networks cost function 신경망 비용 함수
 이것을 중량감쇠(weight decay)라고 합니다. 
 로지스틱 회기 분석와 유사하게 람다(λ) 값을 사용합니다. 
 
+
+## 역 전파 알고리즘 Backpropagation Algorithm
+
+신경망에서 비용함수를 쓰면
+ᆽ![backpropa-01](https://github.com/hephaex/ML_class/blob/master/week5/week5_02_BackPropagation_01.png)
+이고 여기서 비용함수 J(θ)를 최소화 하는 것이 목적이 될 것이다.
+비용함수 J(θ)를 최소화 값을 구하려면,
+J(θ)가 i, j, l의 요소로 구성된  함수이므로,
+θ에 대한 편미분(증감) 값이 최소화하는 값을 구하면 된다.
+ᆽ![backpropa-02](https://github.com/hephaex/ML_class/blob/master/week5/week5_02_BackPropagation_02.png)
+
+그렇다면 예제를 가지고 이것을 구체적으로 알아보자.
+입력x와 목적한 출력 y에 대하여 트레이닝 예시를 보면 다음처럼 될 것이다.
+ᆽ![backpropa-03](https://github.com/hephaex/ML_class/blob/master/week5/week5_02_BackPropagation_03.png)
+
+지난 주에서 했던 전진 전파(forward propagation)으로 이 신경망을 정리하면.
+
+* layer 1
+  - ᆼa^1 : x
+  - z^2 : θ1 * a1
+* layer 2
+  - ᆼa^2 : g(z^2) (add ao ^ 2)
+  - z^3 : θ2 * a2
+* layer 3
+  - ᆼa^3 : g(z^3) (add ao ^ 3)
+  - z^4 : θ3 * a3
+* output
+  - a^4 : hθ(x) = g( z^4 )
+
+ᆽ![backpropa-04](https://github.com/hephaex/ML_class/blob/master/week5/week5_02_BackPropagation_04.png)
+
+**역전파 backpropagation algorithm**
+layer l에서 노드 j의 원하는 값과의 차이를 delta(δ)라고 하자.
+delta(δ)는 j와 l로 첨자를 쓸 수 있다.
+ᆽ![backpropa-12](https://github.com/hephaex/ML_class/blob/master/week5/week5_02_BackPropagation_12.png)
+
+>ᆼᆼaj ^ l: the activation node of node j in layer l
+>δj ^ l: the error of node j in layer l
+
+원하는 결과와 실제 나타난 결과의 차이가 우리가 구성한 신경망에서 오류값이 될 것이다.
+이 오류값을 최소화하는 것이 우리가 하고자 하는 목적이며, 이것이 비용함수를 최소화 하는 값이 된다.
+
+따라서 원하는 출력 값과 실제 출력 값이 어떻게 구하는지 수식으로 풀어 써 보자.
+
+출력 레이어 4에 대한 오류 값 delta는 δj4는
+>δj4 = aj4 - yj
+>> ᆼaj4: acivation j4(신경망에서 실제 값)
+>> yj: 원하는 결과 값
+>> δj4: 실제 값과 결과 값의 차이 
+
+이것을 벡터로 표현하면.
+>δ^4 = a^4 - y 이다. 
+>> δ^4 : 4번째 레이어에서 오류값
+>> ᆼa^4:  4번째 레이어에서 신경망의 실제 값
+
+δ^4 를 구했으므로 다른 레이어에 대하여도 구해보자.
+ᆽ![backpropa-05](https://github.com/hephaex/ML_class/blob/master/week5/week5_02_BackPropagation_05.png)
+
+> Ɵ^3 : 레이어 ᆸ3에서 4로 매핑될 때 매개변수 벡터이다.
+> δ^4 : 레이어 4에서 계산한 값이다.
+> g'(z3) : 입력으로 주어진 ᆷz3에 대하여 activation function으로 계산된 값이다.
+> 즉 g'(z3) = a3 . * (1 - a3) 가 되며,
+> 이것은 다시 레이어 3에서 오류값 delta로 정리하면.
+> δ3 = (Ɵ3)T δ4 . *(a3 . * (1 - a3)) 가 된다.
+>
+> . * 는 matlab에서 두 벡터를 곱하는 연산자 이다.
+
+그러면 전체 신경망을 수학으로 다시 분석해 보자.
+
+ᆽ![backpropa-03](https://github.com/hephaex/ML_class/blob/master/week5/week5_02_BackPropagation_03.png)
+
+* ᆼactivation vector ᆼᆼa^1, a^2, a^3, a^4는
+ - a^1 : 3
+ - a^2 : 5
+ - a^3 : 5
+ - a^4 : 4
+
+* Ɵ^3: 레이어 3에서 레이어 4로 매핑되는 매개변수(parameter) 벡터
+ - [ 4 x 5 ] 행렬 (matrix)이 된다. (bias를 포함 한다면 [ 4 x 6 ] 이다.)
+ - (Ɵ3)T 의 행렬(matrix)는 [ 5 x 4 ] 가 된다.
+
+* δ^4: 레이어 4에서 오류 값
+ - [ 4 x 1 ] 벡터가 된다.
+
+* (Ɵ^3)T δ^4 를 구하면
+ - [ 5 x 4 ] * [ 4 x 1 ] 이므로 [5 x 1 ] 벡터가 된다.
+ - 즉 a3 의 벡터 [ 5 x 1 ] 과 동일한 벡터 형태가 됨을 알 수 있다.
+
+이 방법을 반복해서 레이어 3에서 오류값과 레이어 2에서 오류 값을 수식으로 정리할 수 있다.
+
+> δ2 = (Ɵ2)T δ3 . *(a2 . * (1 - a2))
+
+δ1은 입력이므로 구하지 않는다.
+
+δ를 가지고 신경망을 바꾸서 쓸 수 있었다.
+
+우리가 여기서 구하고자 하는 것은 신경망의 오류를 최소화 하는 비용함수였다.
+즉 δ만으로 표현된 비용함수를 구할 수 있다.
+비용함수를 최소화하면 가장 잘 학습된 신경망에서 결과값을 구할 수 있게 될 것이다.
+즉 δ만으로 표현된 함수를 편미분을 취하여 비용함수가 최소가 되게 할 수 있다.
+ᆽ![backpropa-13](https://github.com/hephaex/ML_class/blob/master/week5/week5_02_BackPropagation_13.png)
+
+정리해 보자.
+예시에서 trainin set은 
+>ᆽ![backpropa-07](https://github.com/hephaex/ML_class/blob/master/week5/week5_02_BackPropagation_07.png)
+이다.
+
+delta 값은 초기화해서 0으로 놓자.
+ᆽ![backpropa-08](https://github.com/hephaex/ML_class/blob/master/week5/week5_02_BackPropagation_08.png)
+
+training set에 대하여 반복된 루프를 해서 delta를 계산해보자.
+
+* ᆼa^1 : x ^ 1
+ - 레이어 1은 입력이므로 a ^ 1은 x ^ 1 입력 값이 된다.
+
+* 레이어 2부터 레이어 L까지 forward propagation을 통해서 a^l 을 계산할 수 있다.
+
+* 마지막 레이어에서 원하는 결과 값과 실제 계산된 결과 값의 차이 δL 을 구할 수 있다.
+
+* δL = a ^ l - y ^ i 이므로
+
+* back propagation 을 통해서 δL -> δ(L-1) -> δ(L-2) -> ... -> δ2 를 계산할 수 있다.
+
+* delta로 정리하면
+> ᆽ![backpropa-09](https://github.com/hephaex/ML_class/blob/master/week5/week5_02_BackPropagation_09.png)
+
+* 이것을 벡터로 표현하면. 
+> ᆽ![backpropa-10](https://github.com/hephaex/ML_class/blob/master/week5/week5_02_BackPropagation_10.png)
+
+* 즉 비용함수를 계산 하기 위한 루프에서 다음을 반복하면 된다.
+> ᆽ![backpropa-11](https://github.com/hephaex/ML_class/blob/master/week5/week5_02_BackPropagation_11.png)
+
+여기서 정규화 항을 고려하지 않는 다면 j가 0이 되기 때문에,
+신경망에서 비용함수를 구할 수 있게 되었다.
+
